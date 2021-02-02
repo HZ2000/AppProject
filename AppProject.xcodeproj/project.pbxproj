@@ -57,10 +57,9 @@
 		55A89ABC25C85E5F00E2633E /* AppProject */ = {
 			isa = PBXGroup;
 			children = (
+				55A89AD925C93D2B00E2633E /* Storyboard */,
+				55A89AD825C93D0B00E2633E /* Views */,
 				55A89ABD25C85E5F00E2633E /* AppDelegate.swift */,
-				55A89AC325C85E5F00E2633E /* Main.storyboard */,
-				55A89AD325C9212000E2633E /* PageViewController.swift */,
-				55A89AD525C9215500E2633E /* FirstHintViewController.swift */,
 			);
 			path = AppProject;
 			sourceTree = "<group>";
@@ -73,6 +72,23 @@
 				55A89ACB25C85E6000E2633E /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		55A89AD825C93D0B00E2633E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55A89AD325C9212000E2633E /* PageViewController.swift */,
+				55A89AD525C9215500E2633E /* FirstHintViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		55A89AD925C93D2B00E2633E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				55A89AC325C85E5F00E2633E /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
