@@ -12,7 +12,7 @@
 		55A89AC725C85E6000E2633E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A89AC625C85E6000E2633E /* Assets.xcassets */; };
 		55A89ACA25C85E6000E2633E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A89AC825C85E6000E2633E /* LaunchScreen.storyboard */; };
 		55A89AD425C9212000E2633E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AD325C9212000E2633E /* PageViewController.swift */; };
-		55A89AD625C9215500E2633E /* FirstHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AD525C9215500E2633E /* FirstHintViewController.swift */; };
+		55A89ADC25C99A1D00E2633E /* FourthHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89ADB25C99A1D00E2633E /* FourthHintViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		55A89AC925C85E6000E2633E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55A89ACB25C85E6000E2633E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A89AD325C9212000E2633E /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		55A89AD525C9215500E2633E /* FirstHintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHintViewController.swift; sourceTree = "<group>"; };
+		55A89ADB25C99A1D00E2633E /* FourthHintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthHintViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +57,9 @@
 		55A89ABC25C85E5F00E2633E /* AppProject */ = {
 			isa = PBXGroup;
 			children = (
+				55A89ADA25C9919C00E2633E /* Dependencies */,
 				55A89AD925C93D2B00E2633E /* Storyboard */,
 				55A89AD825C93D0B00E2633E /* Views */,
-				55A89ABD25C85E5F00E2633E /* AppDelegate.swift */,
 			);
 			path = AppProject;
 			sourceTree = "<group>";
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				55A89AD325C9212000E2633E /* PageViewController.swift */,
-				55A89AD525C9215500E2633E /* FirstHintViewController.swift */,
+				55A89ADB25C99A1D00E2633E /* FourthHintViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -89,6 +89,14 @@
 				55A89AC325C85E5F00E2633E /* Main.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		55A89ADA25C9919C00E2633E /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				55A89ABD25C85E5F00E2633E /* AppDelegate.swift */,
+			);
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,7 +172,7 @@
 			files = (
 				55A89AD425C9212000E2633E /* PageViewController.swift in Sources */,
 				55A89ABE25C85E5F00E2633E /* AppDelegate.swift in Sources */,
-				55A89AD625C9215500E2633E /* FirstHintViewController.swift in Sources */,
+				55A89ADC25C99A1D00E2633E /* FourthHintViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
