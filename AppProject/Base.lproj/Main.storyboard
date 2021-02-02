@@ -1,24 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First Hint View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstHint" id="BYZ-38-t0r" customClass="FirstHintViewController" customModule="AppProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map with human" translatesAutoresizingMaskIntoConstraints="NO" id="20x-JD-6fb">
+                                <rect key="frame" x="50" y="190" width="314" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="mce-Sl-seR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to TripCoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjB-nd-dAG">
+                                <rect key="frame" x="58" y="498" width="298" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="eA5-kG-XXT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="TripCoin rewards you for travelling around Astralia whether you're going up the coast or just down the road." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jfw-GK-1nD">
+                                <rect key="frame" x="50" y="541" width="306" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="9GV-KL-h2d"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tVf-KG-KrR">
+                                <rect key="frame" x="129" y="825" width="148" height="37"/>
+                                <color key="pageIndicatorTintColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="20x-JD-6fb" secondAttribute="trailing" constant="50" id="1hM-vg-fUz"/>
+                            <constraint firstItem="tVf-KG-KrR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2j9-Md-ZdT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jfw-GK-1nD" secondAttribute="trailing" constant="58" id="5eC-wT-cOd"/>
+                            <constraint firstItem="jfw-GK-1nD" firstAttribute="top" secondItem="HjB-nd-dAG" secondAttribute="bottom" constant="8" id="66L-aL-kDa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tVf-KG-KrR" secondAttribute="trailing" constant="137" id="6s9-W1-rgl"/>
+                            <constraint firstItem="jfw-GK-1nD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="DOD-yx-s2P"/>
+                            <constraint firstItem="HjB-nd-dAG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="IJz-Ni-gof"/>
+                            <constraint firstItem="20x-JD-6fb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="O8q-sQ-2Js"/>
+                            <constraint firstItem="HjB-nd-dAG" firstAttribute="top" secondItem="20x-JD-6fb" secondAttribute="bottom" constant="8" id="PzC-0e-UID"/>
+                            <constraint firstItem="20x-JD-6fb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="146" id="lnv-MB-7bh"/>
+                            <constraint firstItem="20x-JD-6fb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s3V-nQ-H9V"/>
+                            <constraint firstItem="tVf-KG-KrR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="129" id="sOn-bV-NKE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HjB-nd-dAG" secondAttribute="trailing" constant="58" id="wF5-c0-UPA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-225" y="161"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="af9-hB-65k">
+            <objects>
+                <viewController id="JlO-TW-bMi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cLd-xR-18r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="RLZ-St-0nV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Vy-ug-0c2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="571" y="161"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Orn-pX-D9l">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Ufj-JZ-emV" customClass="PageViewController" customModule="AppProject" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZv-hR-NGE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952" y="161"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map with human" width="414" height="317.5"/>
+    </resources>
 </document>

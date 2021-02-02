@@ -1,20 +1,21 @@
 //
-//  ViewController.swift
+//  PageViewController.swift
 //  AppProject
 //
-//  Created by Cypress on 2/1/21.
+//  Created by Cypress on 2/2/21.
 //  Copyright © 2021 MacBook. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class PageViewController: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        
     }
+    
 
 
 }
-
