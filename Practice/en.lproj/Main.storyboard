@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MeW-ak-JwE">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First Hint View Controller-->
+        <scene sceneID="0yc-0a-NrX">
+            <objects>
+                <viewController storyboardIdentifier="FirstHintViewController" title="First Hint View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OaQ-lb-Ahy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XFK-eF-XsV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map with human" translatesAutoresizingMaskIntoConstraints="NO" id="20x-JD-6fb">
+                                <rect key="frame" x="8" y="80" width="359" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="5wN-pL-UaR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to TripCoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjB-nd-dAG">
+                                <rect key="frame" x="8" y="340" width="359" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IN2-lV-257"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="0.1371916518306841" green="0.6651562185857588" blue="0.72087439040253809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="TripCoin rewards you for travelling around Astralia whether you're going up the coast or just down the road." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfw-GK-1nD">
+                                <rect key="frame" x="8" y="410" width="359" height="194"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jfw-GK-1nD" firstAttribute="top" secondItem="HjB-nd-dAG" secondAttribute="bottom" constant="30" id="0jt-Ov-Wg1"/>
+                            <constraint firstItem="7Ex-W3-nji" firstAttribute="trailing" secondItem="jfw-GK-1nD" secondAttribute="trailing" constant="8" id="Jr8-tm-sON"/>
+                            <constraint firstItem="20x-JD-6fb" firstAttribute="leading" secondItem="7Ex-W3-nji" secondAttribute="leading" constant="8" id="LHq-Nw-0r7"/>
+                            <constraint firstItem="20x-JD-6fb" firstAttribute="top" secondItem="7Ex-W3-nji" secondAttribute="top" constant="80" id="PXH-u2-BM9"/>
+                            <constraint firstItem="HjB-nd-dAG" firstAttribute="leading" secondItem="7Ex-W3-nji" secondAttribute="leading" constant="8" id="SFu-Dl-lZc"/>
+                            <constraint firstItem="jfw-GK-1nD" firstAttribute="leading" secondItem="7Ex-W3-nji" secondAttribute="leading" constant="8" id="agG-S6-F7i"/>
+                            <constraint firstItem="HjB-nd-dAG" firstAttribute="top" secondItem="20x-JD-6fb" secondAttribute="bottom" constant="30" id="b3P-lP-jrv"/>
+                            <constraint firstItem="7Ex-W3-nji" firstAttribute="bottom" secondItem="jfw-GK-1nD" secondAttribute="bottom" constant="63" id="bpT-U0-sIx"/>
+                            <constraint firstItem="7Ex-W3-nji" firstAttribute="trailing" secondItem="20x-JD-6fb" secondAttribute="trailing" constant="8" id="jMh-k9-bFX"/>
+                            <constraint firstItem="7Ex-W3-nji" firstAttribute="trailing" secondItem="HjB-nd-dAG" secondAttribute="trailing" constant="8" id="q6O-6s-3qF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7Ex-W3-nji"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IKM-Qe-V7s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="543.75" y="160.56338028169014"/>
+        </scene>
+        <!--Second Hint View Controller-->
+        <scene sceneID="af9-hB-65k">
+            <objects>
+                <viewController storyboardIdentifier="SecondHintViewController" title="Second Hint View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JlO-TW-bMi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cLd-xR-18r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="australia map" translatesAutoresizingMaskIntoConstraints="NO" id="GOh-db-Km3">
+                                <rect key="frame" x="8" y="80" width="359" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="6Er-46-5u6"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrX-Lu-kHd">
+                                <rect key="frame" x="8" y="340" width="359" height="120"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="h1B-ar-ctI"/>
+                                </constraints>
+                                <string key="text">We've created zones to help  you find places to go to and earn Coints.                                                         Tap on one to discover more information and see what events are on.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jrX-Lu-kHd" firstAttribute="leading" secondItem="RLZ-St-0nV" secondAttribute="leading" constant="8" id="8ML-o7-lf5"/>
+                            <constraint firstItem="RLZ-St-0nV" firstAttribute="trailing" secondItem="GOh-db-Km3" secondAttribute="trailing" constant="8" id="AN9-ME-7gs"/>
+                            <constraint firstItem="RLZ-St-0nV" firstAttribute="trailing" secondItem="jrX-Lu-kHd" secondAttribute="trailing" constant="8" id="cBX-dC-Ve4"/>
+                            <constraint firstItem="GOh-db-Km3" firstAttribute="top" secondItem="RLZ-St-0nV" secondAttribute="top" constant="80" id="edt-eO-mr5"/>
+                            <constraint firstItem="jrX-Lu-kHd" firstAttribute="top" secondItem="GOh-db-Km3" secondAttribute="bottom" constant="30" id="qZQ-xk-DeK"/>
+                            <constraint firstItem="GOh-db-Km3" firstAttribute="leading" secondItem="RLZ-St-0nV" secondAttribute="leading" constant="8" id="uuW-XB-vRN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RLZ-St-0nV"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UZP-ZU-7fJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Vy-ug-0c2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1434.375" y="160.56338028169014"/>
+        </scene>
+        <!--Third Hint View Controller-->
+        <scene sceneID="RCf-C9-UA6">
+            <objects>
+                <viewController storyboardIdentifier="ThirdHintViewController" title="Third Hint View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Jy-yd-Rk6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NvX-0H-n9t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navigation" translatesAutoresizingMaskIntoConstraints="NO" id="BVc-pM-JCd">
+                                <rect key="frame" x="8" y="80" width="359" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="z38-Ir-foU"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nT-h2-MKH">
+                                <rect key="frame" x="8" y="340" width="359" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="R6X-2g-vPf"/>
+                                </constraints>
+                                <string key="text">Simply travel to a zone on the map and check in an an event and you'll receive your Coins. The longer you stay the more you earn!                             </string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="                        You'll need to stay inside a zone for at least one hour to receive Coins." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uae-8e-4LF">
+                                <rect key="frame" x="8" y="431" width="359" height="75"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="e50-c5-5Bv"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Remember:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jTv-s6-lxN">
+                                <rect key="frame" x="8" y="431" width="110" height="35"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="Mg4-DS-wjb"/>
+                                    <constraint firstAttribute="height" constant="35" id="Q6X-WH-opr"/>
+                                </constraints>
+                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9nT-h2-MKH" firstAttribute="top" secondItem="BVc-pM-JCd" secondAttribute="bottom" constant="30" id="07E-kv-qAg"/>
+                            <constraint firstItem="BVc-pM-JCd" firstAttribute="leading" secondItem="T2W-9b-vEf" secondAttribute="leading" constant="8" id="5Ya-PO-CAa"/>
+                            <constraint firstItem="T2W-9b-vEf" firstAttribute="trailing" secondItem="9nT-h2-MKH" secondAttribute="trailing" constant="8" id="H5W-eS-g8S"/>
+                            <constraint firstItem="BVc-pM-JCd" firstAttribute="top" secondItem="T2W-9b-vEf" secondAttribute="top" constant="80" id="Hzp-nd-JW9"/>
+                            <constraint firstItem="jTv-s6-lxN" firstAttribute="leading" secondItem="T2W-9b-vEf" secondAttribute="leading" constant="8" id="Kxk-sy-Ufh"/>
+                            <constraint firstItem="T2W-9b-vEf" firstAttribute="trailing" secondItem="uae-8e-4LF" secondAttribute="trailing" constant="8" id="gJ7-F8-ceV"/>
+                            <constraint firstItem="9nT-h2-MKH" firstAttribute="leading" secondItem="T2W-9b-vEf" secondAttribute="leading" constant="8" id="lnL-px-pUe"/>
+                            <constraint firstItem="T2W-9b-vEf" firstAttribute="trailing" secondItem="BVc-pM-JCd" secondAttribute="trailing" constant="8" id="nvM-g0-PeY"/>
+                            <constraint firstItem="9nT-h2-MKH" firstAttribute="baseline" secondItem="uae-8e-4LF" secondAttribute="firstBaseline" constant="9" id="sYU-n3-f9Z"/>
+                            <constraint firstItem="uae-8e-4LF" firstAttribute="leading" secondItem="T2W-9b-vEf" secondAttribute="leading" constant="8" id="sfT-Kj-569"/>
+                            <constraint firstItem="jTv-s6-lxN" firstAttribute="top" secondItem="9nT-h2-MKH" secondAttribute="bottom" constant="-9" id="tjH-b7-GdG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T2W-9b-vEf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CNO-CX-7bM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2178.75" y="160.56338028169014"/>
+        </scene>
+        <!--Fourth Hint View Controller-->
+        <scene sceneID="ADs-Sf-n7Q">
+            <objects>
+                <viewController storyboardIdentifier="FourthHintViewController" title="Fourth Hint View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GyB-oT-gKw" customClass="FourthHintViewController" customModule="Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aQ5-PD-sgu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coin Illustration" translatesAutoresizingMaskIntoConstraints="NO" id="sv6-Hg-wTj">
+                                <rect key="frame" x="8" y="80" width="359" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="GzD-7l-TDT"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Use them in the shop for exciting products, experiences and more!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqB-pD-B6o">
+                                <rect key="frame" x="8" y="380" width="359" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="750" constant="60" id="yYH-zO-Q5S"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Your Coins are securely stashed in your Vault.                                     " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQM-mP-J0o">
+                                <rect key="frame" x="8" y="325" width="359" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="gdS-Gd-fwT"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaD-T4-TVt">
+                                <rect key="frame" x="8" y="530.5" width="359" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="kC1-HC-q1T"/>
+                                </constraints>
+                                <state key="normal" title="Done" image="active"/>
+                                <connections>
+                                    <action selector="didTapDoneButton:" destination="GyB-oT-gKw" eventType="touchUpInside" id="qeb-Vk-Rer"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5YU-QZ-Sou" firstAttribute="trailing" secondItem="sv6-Hg-wTj" secondAttribute="trailing" constant="8" id="5C2-vC-0s0"/>
+                            <constraint firstItem="sv6-Hg-wTj" firstAttribute="leading" secondItem="5YU-QZ-Sou" secondAttribute="leading" constant="8" id="5Qi-mO-75f"/>
+                            <constraint firstItem="GaD-T4-TVt" firstAttribute="centerY" secondItem="5YU-QZ-Sou" secondAttribute="centerY" multiplier="1.68" id="85h-72-YWX"/>
+                            <constraint firstItem="NqB-pD-B6o" firstAttribute="leading" secondItem="5YU-QZ-Sou" secondAttribute="leading" constant="8" id="HFk-PP-dML"/>
+                            <constraint firstItem="rQM-mP-J0o" firstAttribute="top" secondItem="sv6-Hg-wTj" secondAttribute="bottom" constant="15" id="HgO-kV-8BZ"/>
+                            <constraint firstItem="5YU-QZ-Sou" firstAttribute="trailing" secondItem="GaD-T4-TVt" secondAttribute="trailing" constant="8" id="JtT-hY-hI6"/>
+                            <constraint firstItem="GaD-T4-TVt" firstAttribute="leading" secondItem="5YU-QZ-Sou" secondAttribute="leading" constant="8" id="Ms3-kH-w2p"/>
+                            <constraint firstItem="sv6-Hg-wTj" firstAttribute="top" secondItem="5YU-QZ-Sou" secondAttribute="top" constant="80" id="QDX-lc-MGl"/>
+                            <constraint firstItem="rQM-mP-J0o" firstAttribute="baseline" secondItem="NqB-pD-B6o" secondAttribute="firstBaseline" constant="5" id="SKg-Lq-1aU"/>
+                            <constraint firstItem="GaD-T4-TVt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="NqB-pD-B6o" secondAttribute="bottom" constant="20" id="VtX-ms-M0S"/>
+                            <constraint firstItem="5YU-QZ-Sou" firstAttribute="trailing" secondItem="NqB-pD-B6o" secondAttribute="trailing" constant="8" id="cDh-j5-zWK"/>
+                            <constraint firstItem="5YU-QZ-Sou" firstAttribute="trailing" secondItem="rQM-mP-J0o" secondAttribute="trailing" constant="8" id="ggX-SF-nfO"/>
+                            <constraint firstItem="rQM-mP-J0o" firstAttribute="leading" secondItem="5YU-QZ-Sou" secondAttribute="leading" constant="8" id="xRp-fp-KAs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5YU-QZ-Sou"/>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="GaD-T4-TVt" id="VfO-kV-8Vy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5EA-up-d8K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3011.25" y="160.56338028169014"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Orn-pX-D9l">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Ufj-JZ-emV" customClass="PageViewController" customModule="Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="EAB-v9-Nez"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZv-hR-NGE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2242" y="-608"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DJx-wP-gLo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="MeW-ak-JwE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vS1-1c-bpX">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ufj-JZ-emV" kind="relationship" relationship="rootViewController" id="4Ja-G1-shs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KYH-YB-vcP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1303" y="-608"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Coin Illustration" width="364" height="318.5"/>
+        <image name="active" width="371" height="55"/>
+        <image name="australia map" width="323.5" height="309"/>
+        <image name="map with human" width="414" height="317.5"/>
+        <image name="navigation" width="323.5" height="269.5"/>
+    </resources>
+</document>

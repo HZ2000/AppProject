@@ -9,17 +9,29 @@
 import UIKit
 
 class FourthHintViewController: UIViewController {
-
+    //MARK: Outlets
+    
     @IBOutlet weak var doneButton: UIButton!
+    
+    // Properties
+    
+    var doneButtonTap: (() -> ())?
+    weak var delegate: FourthIntroPageDelegate?
+    
+    //MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
+    
+    //MARK: Actions
     
     @IBAction func didTapDoneButton(_ sender: Any) {
-        
+        doneButtonTap?()
     }
-    
+}
+
+protocol FourthIntroPageDelegate: AnyObject {
+    func didTapDoneButton()
 }
