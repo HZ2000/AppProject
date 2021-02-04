@@ -9,6 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    static let storyboardId = "LoginViewController"
     
     let loginLabel: UILabel = {
         let label = UILabel()

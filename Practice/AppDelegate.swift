@@ -13,15 +13,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        if !UserDefaults.standard.bool(forKey: "didSeeHints") {
-//            UserDefaults.standard.set(true, forKey: "didSeeHints")
-//
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let viewController = storyboard.instantiateViewController(withIdentifier: "PageViewController")
-//            self.window?.rootViewController = viewController
-//            self.window?.makeKeyAndVisible()
-//        }
+        configureAppFlow()
+        
         return true
+    }
+    
+    // MARK: Helpers
+    private func configureAppFlow() {
+        guard let navController = window?.rootViewController as? UINavigationController else { return }
+        
+        if UserService.shared.appWasLaunched() {
+            let loginVC = UIViewController.getViewController(id: LoginViewController.storyboardId)
+            
+            navController.viewControllers = [loginVC]
+        }
     }
 }
 

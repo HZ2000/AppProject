@@ -22,10 +22,16 @@ class PageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
         setupInitalViews()
         configureDelegation()
         setupInitialVCs()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UserService.shared.setAppWasLaunched()
     }
     
     //MARK: Helpers
@@ -55,7 +61,7 @@ class PageViewController: UIPageViewController {
         pageControl.currentPageIndicatorTintColor = .orange
         pageControl.tintColor = .black
         pageControl.pageIndicatorTintColor = .black
-        
+        pageControl.isUserInteractionEnabled = false
         pageControl.translatesAutoresizingMaskIntoConstraints = false
 
         let bottomConst = pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8)
@@ -76,18 +82,17 @@ class PageViewController: UIPageViewController {
         button.addTarget(self, action: #selector(didTapSkipButton), for: .touchUpInside)
         
         button.translatesAutoresizingMaskIntoConstraints = false
-
-        let topConst = button.topAnchor.constraint(equalTo: view.topAnchor, constant: 40)
-        let trailingConst1 = button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+    
+        let topConst = NSLayoutConstraint(item: button, attribute: .topMargin, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1, constant: 40)
+        let trailingConst = NSLayoutConstraint(item: button, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -20)
         
-        NSLayoutConstraint.activate([topConst,trailingConst1])
+        NSLayoutConstraint.activate([topConst,trailingConst])
         
         self.skipButton = button
     }
     
     @objc private func didTapSkipButton() {
-        let vc = LoginViewController()
-        present(vc,animated: true)
+        gotToLoginScreen()
     }
     
     private func getAllViewControllers() -> [UIViewController] {
@@ -100,7 +105,7 @@ class PageViewController: UIPageViewController {
             
             if let fourthVC = vcToAppend as? FourthHintViewController {
                 fourthVC.doneButtonTap = { [weak self] () in
-                    
+                    self?.gotToLoginScreen()
                 }
             }
             
@@ -108,6 +113,12 @@ class PageViewController: UIPageViewController {
         }
         
         return VCsToReturn
+    }
+    
+    private func gotToLoginScreen() {
+        let loginVC = UIViewController.getViewController(id: LoginViewController.storyboardId)
+        
+        navigationController?.pushViewController(loginVC, animated: true)
     }
 }
 

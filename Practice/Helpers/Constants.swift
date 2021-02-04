@@ -12,4 +12,10 @@ struct Constants {
     enum StoryboardName: String {
         case main = "Main"
     }
+    
+    enum UserDefaultsKey: String {
+        case appWasLaunched = "appWasLaunched"
+        case userIsLogged = "userIsLogged"
+    }
 }
+
