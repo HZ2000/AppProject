@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,9 +17,15 @@
 		55A89AE525CADC9600E2633E /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AE425CADC9600E2633E /* UIViewController + Ext.swift */; };
 		55A89AE725CADCF300E2633E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AE625CADCF300E2633E /* Constants.swift */; };
 		55A89AED25CBD0B600E2633E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AEC25CBD0B600E2633E /* UserService.swift */; };
+		55A89AF025CD752800E2633E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AEF25CD752800E2633E /* LoginViewModel.swift */; };
+		55A89AF425CD7F0200E2633E /* LoginEmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AF325CD7F0200E2633E /* LoginEmailTextField.swift */; };
+		55A89AF625CD7F3000E2633E /* LoginEmailFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AF525CD7F3000E2633E /* LoginEmailFieldViewModel.swift */; };
+		70772571053A33D9F606E13B /* Pods_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC5931500B896914D8E02D8 /* Pods_Practice.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E669C89715BE8A9E8E6E4CB /* Pods-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice.release.xcconfig"; path = "Target Support Files/Pods-Practice/Pods-Practice.release.xcconfig"; sourceTree = "<group>"; };
+		3EC5931500B896914D8E02D8 /* Pods_Practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A89ABA25C85E5F00E2633E /* Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A89ABD25C85E5F00E2633E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A89AC625C85E6000E2633E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +38,10 @@
 		55A89AE625CADCF300E2633E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		55A89AE825CADF5C00E2633E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55A89AEC25CBD0B600E2633E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		55A89AEF25CD752800E2633E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		55A89AF325CD7F0200E2633E /* LoginEmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailTextField.swift; sourceTree = "<group>"; };
+		55A89AF525CD7F3000E2633E /* LoginEmailFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailFieldViewModel.swift; sourceTree = "<group>"; };
+		DAC49464E434FC27D76986D8 /* Pods-Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice.debug.xcconfig"; path = "Target Support Files/Pods-Practice/Pods-Practice.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70772571053A33D9F606E13B /* Pods_Practice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +62,8 @@
 				55A89ABC25C85E5F00E2633E /* Practice */,
 				55A89AD725C926B100E2633E /* Supporting Files */,
 				55A89ABB25C85E5F00E2633E /* Products */,
+				6271A558BC72ABC78665BF60 /* Pods */,
+				977090B1ECEFE27AE91C6BFA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +100,7 @@
 		55A89AD825C93D0B00E2633E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				55A89AF125CD7ED600E2633E /* TextFields */,
 				55A89ADF25CAD7F400E2633E /* Screens */,
 			);
 			path = UI;
@@ -122,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				55A89ADD25CABECE00E2633E /* LoginViewController.swift */,
+				55A89AEF25CD752800E2633E /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -143,6 +158,40 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		55A89AF125CD7ED600E2633E /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				55A89AF225CD7EDE00E2633E /* LoginEmail */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		55A89AF225CD7EDE00E2633E /* LoginEmail */ = {
+			isa = PBXGroup;
+			children = (
+				55A89AF325CD7F0200E2633E /* LoginEmailTextField.swift */,
+				55A89AF525CD7F3000E2633E /* LoginEmailFieldViewModel.swift */,
+			);
+			path = LoginEmail;
+			sourceTree = "<group>";
+		};
+		6271A558BC72ABC78665BF60 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DAC49464E434FC27D76986D8 /* Pods-Practice.debug.xcconfig */,
+				3E669C89715BE8A9E8E6E4CB /* Pods-Practice.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		977090B1ECEFE27AE91C6BFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EC5931500B896914D8E02D8 /* Pods_Practice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55A89ACE25C85E6000E2633E /* Build configuration list for PBXNativeTarget "Practice" */;
 			buildPhases = (
+				7D31302A5D8BA56CFDECF82C /* [CP] Check Pods Manifest.lock */,
 				55A89AB625C85E5F00E2633E /* Sources */,
 				55A89AB725C85E5F00E2633E /* Frameworks */,
 				55A89AB825C85E5F00E2633E /* Resources */,
+				F2F52155931E68F8B0454BF3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,6 +260,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7D31302A5D8BA56CFDECF82C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Practice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2F52155931E68F8B0454BF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Practice/Pods-Practice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Practice/Pods-Practice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Practice/Pods-Practice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		55A89AB625C85E5F00E2633E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -218,8 +311,11 @@
 				55A89ADE25CABECE00E2633E /* LoginViewController.swift in Sources */,
 				55A89AD425C9212000E2633E /* PageViewController.swift in Sources */,
 				55A89ABE25C85E5F00E2633E /* AppDelegate.swift in Sources */,
+				55A89AF025CD752800E2633E /* LoginViewModel.swift in Sources */,
 				55A89AE525CADC9600E2633E /* UIViewController + Ext.swift in Sources */,
+				55A89AF625CD7F3000E2633E /* LoginEmailFieldViewModel.swift in Sources */,
 				55A89ADC25C99A1D00E2633E /* FourthHintViewController.swift in Sources */,
+				55A89AF425CD7F0200E2633E /* LoginEmailTextField.swift in Sources */,
 				55A89AE725CADCF300E2633E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +458,7 @@
 		};
 		55A89ACF25C85E6000E2633E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAC49464E434FC27D76986D8 /* Pods-Practice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -381,6 +478,7 @@
 		};
 		55A89AD025C85E6000E2633E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E669C89715BE8A9E8E6E4CB /* Pods-Practice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

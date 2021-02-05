@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+
 
 class LoginViewController: UIViewController {
     static let storyboardId = "LoginViewController"
@@ -17,6 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var isSecureTextEntryButton: UIButton!
     
+    //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureOutlets()
@@ -29,30 +32,16 @@ class LoginViewController: UIViewController {
         }
         
         if !email.isValidEmail {
-            let alert = UIAlertController(title: "Wrong E-Mail Address", message: "Please enter correct E-Mail Address", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Wrong E-Mail Address", message: "Please enter correct E-Mail Address.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Done", style: .cancel, handler: nil))
             present(alert,animated: true)
         } else if !password.isValidPassword {
-            let alert = UIAlertController(title: "Wrong Password", message: "Please enter correct Password. It has to contain at least 8 digits , also uppercase and lowercase letters and numbers", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Wrong Password", message: "Please enter correct Password. It has to contain at least 8 digits , also uppercase and lowercase letters, numbers and symbols.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Done", style: .cancel, handler: nil))
+            present(alert,animated: true)
+        } else {
+            
         }
-        
-    }
-
-    
-    //MARK: Methods
-    
-    private func configureOutlets() {
-        emailTextField.addBottomBorder()
-        passwordTextField.addBottomBorder()
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        //Login Button Setup
-        loginButton.layer.shadowRadius = 2.0
-        loginButton.layer.shadowColor = UIColor.lightGray.cgColor
-        loginButton.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-        loginButton.layer.shadowOpacity = 1.0
-        loginButton.layer.shadowRadius = 1.0
     }
     
     @IBAction func didTapSecureEntryButton(_ sender: Any) {
@@ -64,9 +53,23 @@ class LoginViewController: UIViewController {
             isSecureTextEntryButton.setImage(#imageLiteral(resourceName: "Eye-Off"),for: .normal)
         }
     }
+
+    //MARK: Methods
     
+    private func configureOutlets() {
+        emailTextField.addBottomBorder()
+        emailTextField.delegate = self
+        emailTextField.addingShadows()
+        
+        passwordTextField.addBottomBorder()
+        passwordTextField.addingShadows()
+        passwordTextField.delegate = self
+        
+        loginButton.addingShadows()
+    }
 }
 
+//MARK: UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }

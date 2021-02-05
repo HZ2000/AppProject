@@ -16,13 +16,23 @@ extension UIViewController {
     }
 }
 
+
 extension UITextField {
     func addBottomBorder() {
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0, y: self.frame.height - 12, width: self.frame.width, height: 1)
-        bottomLine.backgroundColor = UIColor.lightGray.cgColor
+        var bottomBorder = UIView()
+        self.translatesAutoresizingMaskIntoConstraints = false
+        bottomBorder = UIView.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        bottomBorder.backgroundColor = UIColor.lightGray
+        bottomBorder.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(bottomBorder)
         self.borderStyle = .none
-        self.layer.addSublayer(bottomLine)
+        
+        //Setup Anchors
+        bottomBorder.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+        bottomBorder.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        bottomBorder.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        bottomBorder.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
+        
     }
 }
 
@@ -32,7 +42,17 @@ extension String {
     }
     
     var isValidPassword: Bool {
-        NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z]).{8,}$").evaluate(with: self)
+        NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[$@$#!%*?&]).{6,}$").evaluate(with: self)
+    }
+}
+
+extension UIControl {
+    func addingShadows() {
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowRadius = 0.5
+        self.layer.shadowColor = UIColor.lightGray.cgColor
+        self.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        self.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
     }
 }
 

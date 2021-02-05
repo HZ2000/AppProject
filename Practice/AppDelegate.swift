@@ -24,8 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if UserService.shared.appWasLaunched() {
             let loginVC = UIViewController.getViewController(id: LoginViewController.storyboardId)
-            
             navController.viewControllers = [loginVC]
+        } else if UserService.shared.userWasLoggedIn() {
+            
         }
     }
 }
