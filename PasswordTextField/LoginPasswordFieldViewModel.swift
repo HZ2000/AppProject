@@ -1,5 +1,5 @@
 //
-//  LoginEmailFieldViewModel.swift
+//  LoginPasswordFieldViewModel.swift
 //  Practice
 //
 //  Created by Cypress on 2/5/21.
@@ -7,10 +7,11 @@
 //
 
 import Foundation
-import RxCocoa
 import RxSwift
+import RxCocoa
 
-class LoginEmailFieldViewModel {
+class LoginPasswordFieldViewModel {
+    
     // MARK: Input
     
     let text: BehaviorRelay<String?> = BehaviorRelay(value: nil)
@@ -22,7 +23,7 @@ class LoginEmailFieldViewModel {
     // MARK: Init
     
     init() {
-        setupInitialBidnings()
+        setupInitialBindings()
     }
     
     // MARK: Properties
@@ -31,12 +32,14 @@ class LoginEmailFieldViewModel {
     
     // MARK: Helpers
     
-    private func setupInitialBidnings() {
+    private func setupInitialBindings() {
         text
             .map { (str) in
-                return Validation.emailIsValid(str)
+                return Validation.passwordIsValid(str)
             }
             .bind(to: isValid)
             .disposed(by: bag)
+        
+        
     }
 }

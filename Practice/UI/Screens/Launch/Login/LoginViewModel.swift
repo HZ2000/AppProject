@@ -10,21 +10,54 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-struct LoginViewModel {
+typealias LoginCredential = (email: String?,password: String?)
+
+class LoginViewModel {
     // MARK: Input
     
+    public let loginButtonTap = PublishRelay<Void>()
     
+    // MARK: Output
     
-    // MARK: Outpout
+    let emailFieldViewModel = BehaviorRelay<LoginEmailFieldViewModel>(value: LoginEmailFieldViewModel())
+    let passwordFieldViewModel = BehaviorRelay<LoginPasswordFieldViewModel>(value: LoginPasswordFieldViewModel())
+    let emailErrorDescript = BehaviorRelay<String?>(value: nil)
+    let passwordErrorDescript = BehaviorRelay<String?>(value: nil)
+    let loginSuccess = PublishRelay<Bool?>()
     
+    // MARK: Init
     
-//    let email = BehaviorRelay<String>(value: "")
-//    let password = BehaviorRelay<String>(value: "")
-//
-//    var isValid: Observable<Bool> {
-//        return Observable.combineLatest(self.email.asObservable(), self.password.asObservable())
-//        { (email, password) in
-//            return NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: email) && NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[$@$#!%*?&]).{6,}$").evaluate(with: password)
-//        }
-//    }
+    init() {
+        setupInitialBindings()
+    }
+    
+    // MARK: Properties
+    
+    private let disposeBag = DisposeBag()
+    
+    // MARK: Helpers
+    
+    private func setupInitialBindings() {
+        loginButtonTap
+            .subscribe(
+                onNext: { [weak self] () in
+                    self?.handleLoginTap()
+                }
+            )
+            .disposed(by: disposeBag)
+    }
+    
+    private func handleLoginTap() {
+        let emailErrorStr = emailFieldViewModel.value.isValid.value ? nil : Constants.LabelMessage.invalidEmail.rawValue
+        let passwordErrorStr = passwordFieldViewModel.value.isValid.value ? nil : Constants.LabelMessage.invalidPassword.rawValue
+        
+        emailErrorDescript.accept(emailErrorStr)
+        passwordErrorDescript.accept(passwordErrorStr)
+        
+        let loginSuccess = (emailErrorStr == nil) && (passwordErrorStr == nil)
+        
+        if (loginSuccess) {
+            self.loginSuccess.accept((true))
+        }
+    }
 }

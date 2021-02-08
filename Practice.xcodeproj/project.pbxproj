@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55757B3C25D15DA900325F71 /* LoginEmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B3B25D15DA900325F71 /* LoginEmailTextField.swift */; };
+		55757B4125D163AF00325F71 /* LoginPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B4025D163AF00325F71 /* LoginPasswordTextField.swift */; };
+		55757B4325D1835100325F71 /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B4225D1835100325F71 /* RedViewController.swift */; };
 		55A89ABE25C85E5F00E2633E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89ABD25C85E5F00E2633E /* AppDelegate.swift */; };
 		55A89AC525C85E5F00E2633E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A89AC325C85E5F00E2633E /* Main.storyboard */; };
 		55A89AC725C85E6000E2633E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A89AC625C85E6000E2633E /* Assets.xcassets */; };
@@ -18,14 +21,18 @@
 		55A89AE725CADCF300E2633E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AE625CADCF300E2633E /* Constants.swift */; };
 		55A89AED25CBD0B600E2633E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AEC25CBD0B600E2633E /* UserService.swift */; };
 		55A89AF025CD752800E2633E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AEF25CD752800E2633E /* LoginViewModel.swift */; };
-		55A89AF425CD7F0200E2633E /* LoginEmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AF325CD7F0200E2633E /* LoginEmailTextField.swift */; };
 		55A89AF625CD7F3000E2633E /* LoginEmailFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AF525CD7F3000E2633E /* LoginEmailFieldViewModel.swift */; };
+		55A89AFA25CD8F4800E2633E /* LoginPasswordFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AF925CD8F4800E2633E /* LoginPasswordFieldViewModel.swift */; };
+		55A89B0025D153B500E2633E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AFF25D153B500E2633E /* Validation.swift */; };
 		70772571053A33D9F606E13B /* Pods_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC5931500B896914D8E02D8 /* Pods_Practice.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E669C89715BE8A9E8E6E4CB /* Pods-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice.release.xcconfig"; path = "Target Support Files/Pods-Practice/Pods-Practice.release.xcconfig"; sourceTree = "<group>"; };
 		3EC5931500B896914D8E02D8 /* Pods_Practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55757B3B25D15DA900325F71 /* LoginEmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailTextField.swift; sourceTree = "<group>"; };
+		55757B4025D163AF00325F71 /* LoginPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordTextField.swift; sourceTree = "<group>"; };
+		55757B4225D1835100325F71 /* RedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedViewController.swift; sourceTree = "<group>"; };
 		55A89ABA25C85E5F00E2633E /* Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A89ABD25C85E5F00E2633E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A89AC625C85E6000E2633E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,8 +46,9 @@
 		55A89AE825CADF5C00E2633E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55A89AEC25CBD0B600E2633E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		55A89AEF25CD752800E2633E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		55A89AF325CD7F0200E2633E /* LoginEmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailTextField.swift; sourceTree = "<group>"; };
 		55A89AF525CD7F3000E2633E /* LoginEmailFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailFieldViewModel.swift; sourceTree = "<group>"; };
+		55A89AF925CD8F4800E2633E /* LoginPasswordFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordFieldViewModel.swift; sourceTree = "<group>"; };
+		55A89AFF25D153B500E2633E /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		DAC49464E434FC27D76986D8 /* Pods-Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice.debug.xcconfig"; path = "Target Support Files/Pods-Practice/Pods-Practice.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +64,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55757B3F25D1637900325F71 /* PasswordTextField */ = {
+			isa = PBXGroup;
+			children = (
+				55A89AF925CD8F4800E2633E /* LoginPasswordFieldViewModel.swift */,
+				55757B4025D163AF00325F71 /* LoginPasswordTextField.swift */,
+			);
+			name = PasswordTextField;
+			path = ../../../PasswordTextField;
+			sourceTree = "<group>";
+		};
 		55A89AB125C85E5F00E2633E = {
 			isa = PBXGroup;
 			children = (
@@ -135,8 +153,9 @@
 		55A89AE225CAD82600E2633E /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				55A89ADD25CABECE00E2633E /* LoginViewController.swift */,
 				55A89AEF25CD752800E2633E /* LoginViewModel.swift */,
+				55A89ADD25CABECE00E2633E /* LoginViewController.swift */,
+				55757B4225D1835100325F71 /* RedViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -146,6 +165,7 @@
 			children = (
 				55A89AE425CADC9600E2633E /* UIViewController + Ext.swift */,
 				55A89AE625CADCF300E2633E /* Constants.swift */,
+				55A89AFF25D153B500E2633E /* Validation.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -161,6 +181,7 @@
 		55A89AF125CD7ED600E2633E /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
+				55757B3F25D1637900325F71 /* PasswordTextField */,
 				55A89AF225CD7EDE00E2633E /* LoginEmail */,
 			);
 			path = TextFields;
@@ -169,8 +190,8 @@
 		55A89AF225CD7EDE00E2633E /* LoginEmail */ = {
 			isa = PBXGroup;
 			children = (
-				55A89AF325CD7F0200E2633E /* LoginEmailTextField.swift */,
 				55A89AF525CD7F3000E2633E /* LoginEmailFieldViewModel.swift */,
+				55757B3B25D15DA900325F71 /* LoginEmailTextField.swift */,
 			);
 			path = LoginEmail;
 			sourceTree = "<group>";
@@ -307,15 +328,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55757B4325D1835100325F71 /* RedViewController.swift in Sources */,
+				55A89AFA25CD8F4800E2633E /* LoginPasswordFieldViewModel.swift in Sources */,
 				55A89AED25CBD0B600E2633E /* UserService.swift in Sources */,
 				55A89ADE25CABECE00E2633E /* LoginViewController.swift in Sources */,
+				55A89B0025D153B500E2633E /* Validation.swift in Sources */,
 				55A89AD425C9212000E2633E /* PageViewController.swift in Sources */,
 				55A89ABE25C85E5F00E2633E /* AppDelegate.swift in Sources */,
 				55A89AF025CD752800E2633E /* LoginViewModel.swift in Sources */,
 				55A89AE525CADC9600E2633E /* UIViewController + Ext.swift in Sources */,
 				55A89AF625CD7F3000E2633E /* LoginEmailFieldViewModel.swift in Sources */,
 				55A89ADC25C99A1D00E2633E /* FourthHintViewController.swift in Sources */,
-				55A89AF425CD7F0200E2633E /* LoginEmailTextField.swift in Sources */,
+				55757B3C25D15DA900325F71 /* LoginEmailTextField.swift in Sources */,
+				55757B4125D163AF00325F71 /* LoginPasswordTextField.swift in Sources */,
 				55A89AE725CADCF300E2633E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

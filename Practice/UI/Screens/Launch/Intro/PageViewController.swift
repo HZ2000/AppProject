@@ -9,7 +9,7 @@
 import UIKit
 
 class PageViewController: UIPageViewController {
-    //MARK: Properties
+    // MARK: Properties
     
     private let vcsIdentifier = "HintViewController"
     private var skipButton: UIButton!
@@ -18,7 +18,7 @@ class PageViewController: UIPageViewController {
         return getAllViewControllers()
     }()
     
-    //MARK: View Life Cycle
+    // MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class PageViewController: UIPageViewController {
         UserService.shared.setAppWasLaunched()
     }
     
-    //MARK: Helpers
+    // MARK: Helpers
     
     private func setupInitialVCs() {
         if let firstViewController = orderedViewControllers.first {
@@ -122,7 +122,7 @@ class PageViewController: UIPageViewController {
     }
 }
 
-//MARK: UIPageViewControllerDelegate,UIPageViewControllerDataSource
+// MARK: UIPageViewControllerDelegate,UIPageViewControllerDataSource
 
 extension PageViewController: UIPageViewControllerDelegate , UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

@@ -1,5 +1,5 @@
 //
-//  LoginEmailTextField.swift
+//  LoginPasswordTextField.swift
 //  Practice
 //
 //  Created by Cypress on 2/8/21.
@@ -10,10 +10,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LoginEmailTextField: UITextField {
+class LoginPasswordTextField: UITextField {
+    
     // MARK: Methods
     
-    func setup(viewModel: LoginEmailFieldViewModel) {
+    func setup(viewModel: LoginPasswordFieldViewModel) {
         self.viewModel = viewModel
         
         bag = DisposeBag()
@@ -22,7 +23,7 @@ class LoginEmailTextField: UITextField {
     
     // MARK: Properties
     
-    private var viewModel: LoginEmailFieldViewModel?
+    private var viewModel: LoginPasswordFieldViewModel?
     private var bag = DisposeBag()
     
     // MARK: Helpers
@@ -35,5 +36,4 @@ class LoginEmailTextField: UITextField {
             .bind(to: viewModel.text)
             .disposed(by: bag)
     }
-    
 }

@@ -17,5 +17,10 @@ struct Constants {
         case appWasLaunched = "appWasLaunched"
         case userIsLogged = "userIsLogged"
     }
+    
+    enum LabelMessage: String {
+        case invalidPassword = "Invalid Password"
+        case invalidEmail = "Invalid Email"
+    }
 }
 
