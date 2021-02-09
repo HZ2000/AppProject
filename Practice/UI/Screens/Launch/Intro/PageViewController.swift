@@ -28,6 +28,8 @@ class PageViewController: UIPageViewController {
         setupInitialVCs()
     }
     
+    // MARK: View life cycle
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

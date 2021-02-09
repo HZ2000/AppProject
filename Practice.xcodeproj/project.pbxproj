@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		55757B3C25D15DA900325F71 /* LoginEmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B3B25D15DA900325F71 /* LoginEmailTextField.swift */; };
 		55757B4125D163AF00325F71 /* LoginPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B4025D163AF00325F71 /* LoginPasswordTextField.swift */; };
-		55757B4325D1835100325F71 /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B4225D1835100325F71 /* RedViewController.swift */; };
+		55757B4625D2725C00325F71 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B4525D2725C00325F71 /* HomeViewController.swift */; };
+		55757B4A25D2A43B00325F71 /* UITextField + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B4925D2A43B00325F71 /* UITextField + Ext.swift */; };
+		55757B4C25D2A46E00325F71 /* String Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B4B25D2A46E00325F71 /* String Ext.swift */; };
+		55757B4E25D2A48C00325F71 /* UIControl + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B4D25D2A48C00325F71 /* UIControl + Ext.swift */; };
 		55A89ABE25C85E5F00E2633E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89ABD25C85E5F00E2633E /* AppDelegate.swift */; };
 		55A89AC525C85E5F00E2633E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A89AC325C85E5F00E2633E /* Main.storyboard */; };
 		55A89AC725C85E6000E2633E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A89AC625C85E6000E2633E /* Assets.xcassets */; };
@@ -32,7 +35,10 @@
 		3EC5931500B896914D8E02D8 /* Pods_Practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55757B3B25D15DA900325F71 /* LoginEmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailTextField.swift; sourceTree = "<group>"; };
 		55757B4025D163AF00325F71 /* LoginPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordTextField.swift; sourceTree = "<group>"; };
-		55757B4225D1835100325F71 /* RedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedViewController.swift; sourceTree = "<group>"; };
+		55757B4525D2725C00325F71 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		55757B4925D2A43B00325F71 /* UITextField + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Ext.swift"; sourceTree = "<group>"; };
+		55757B4B25D2A46E00325F71 /* String Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String Ext.swift"; sourceTree = "<group>"; };
+		55757B4D25D2A48C00325F71 /* UIControl + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl + Ext.swift"; sourceTree = "<group>"; };
 		55A89ABA25C85E5F00E2633E /* Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A89ABD25C85E5F00E2633E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A89AC625C85E6000E2633E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,11 +73,19 @@
 		55757B3F25D1637900325F71 /* PasswordTextField */ = {
 			isa = PBXGroup;
 			children = (
-				55A89AF925CD8F4800E2633E /* LoginPasswordFieldViewModel.swift */,
 				55757B4025D163AF00325F71 /* LoginPasswordTextField.swift */,
+				55A89AF925CD8F4800E2633E /* LoginPasswordFieldViewModel.swift */,
 			);
 			name = PasswordTextField;
 			path = ../../../PasswordTextField;
+			sourceTree = "<group>";
+		};
+		55757B4425D2724B00325F71 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				55757B4525D2725C00325F71 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		55A89AB125C85E5F00E2633E = {
@@ -135,6 +149,7 @@
 		55A89AE025CAD7FC00E2633E /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				55757B4425D2724B00325F71 /* Home */,
 				55A89AE125CAD80900E2633E /* Intro */,
 				55A89AE225CAD82600E2633E /* Login */,
 			);
@@ -153,9 +168,8 @@
 		55A89AE225CAD82600E2633E /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				55A89AEF25CD752800E2633E /* LoginViewModel.swift */,
 				55A89ADD25CABECE00E2633E /* LoginViewController.swift */,
-				55757B4225D1835100325F71 /* RedViewController.swift */,
+				55A89AEF25CD752800E2633E /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -164,6 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				55A89AE425CADC9600E2633E /* UIViewController + Ext.swift */,
+				55757B4925D2A43B00325F71 /* UITextField + Ext.swift */,
+				55757B4B25D2A46E00325F71 /* String Ext.swift */,
+				55757B4D25D2A48C00325F71 /* UIControl + Ext.swift */,
 				55A89AE625CADCF300E2633E /* Constants.swift */,
 				55A89AFF25D153B500E2633E /* Validation.swift */,
 			);
@@ -190,8 +207,8 @@
 		55A89AF225CD7EDE00E2633E /* LoginEmail */ = {
 			isa = PBXGroup;
 			children = (
-				55A89AF525CD7F3000E2633E /* LoginEmailFieldViewModel.swift */,
 				55757B3B25D15DA900325F71 /* LoginEmailTextField.swift */,
+				55A89AF525CD7F3000E2633E /* LoginEmailFieldViewModel.swift */,
 			);
 			path = LoginEmail;
 			sourceTree = "<group>";
@@ -328,12 +345,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55757B4325D1835100325F71 /* RedViewController.swift in Sources */,
 				55A89AFA25CD8F4800E2633E /* LoginPasswordFieldViewModel.swift in Sources */,
 				55A89AED25CBD0B600E2633E /* UserService.swift in Sources */,
 				55A89ADE25CABECE00E2633E /* LoginViewController.swift in Sources */,
 				55A89B0025D153B500E2633E /* Validation.swift in Sources */,
 				55A89AD425C9212000E2633E /* PageViewController.swift in Sources */,
+				55757B4A25D2A43B00325F71 /* UITextField + Ext.swift in Sources */,
+				55757B4625D2725C00325F71 /* HomeViewController.swift in Sources */,
+				55757B4E25D2A48C00325F71 /* UIControl + Ext.swift in Sources */,
 				55A89ABE25C85E5F00E2633E /* AppDelegate.swift in Sources */,
 				55A89AF025CD752800E2633E /* LoginViewModel.swift in Sources */,
 				55A89AE525CADC9600E2633E /* UIViewController + Ext.swift in Sources */,
@@ -342,6 +361,7 @@
 				55757B3C25D15DA900325F71 /* LoginEmailTextField.swift in Sources */,
 				55757B4125D163AF00325F71 /* LoginPasswordTextField.swift in Sources */,
 				55A89AE725CADCF300E2633E /* Constants.swift in Sources */,
+				55757B4C25D2A46E00325F71 /* String Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

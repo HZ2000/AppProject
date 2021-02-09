@@ -23,7 +23,7 @@ class LoginViewModel {
     let passwordFieldViewModel = BehaviorRelay<LoginPasswordFieldViewModel>(value: LoginPasswordFieldViewModel())
     let emailErrorDescript = BehaviorRelay<String?>(value: nil)
     let passwordErrorDescript = BehaviorRelay<String?>(value: nil)
-    let loginSuccess = PublishRelay<Bool?>()
+    let loginSuccess = PublishRelay<Bool>()
     
     // MARK: Init
     
@@ -58,6 +58,7 @@ class LoginViewModel {
         
         if (loginSuccess) {
             self.loginSuccess.accept((true))
+            UserService.shared.setUserIsLoggedIn()
         }
     }
 }

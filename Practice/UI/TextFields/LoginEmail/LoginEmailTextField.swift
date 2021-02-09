@@ -11,6 +11,26 @@ import RxSwift
 import RxCocoa
 
 class LoginEmailTextField: UITextField {
+    // MARK: View Life Cycle
+
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        super.placeholderRect(forBounds: bounds)
+        
+        return bounds.offsetBy(dx: 5, dy: 0)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        super.editingRect(forBounds: bounds)
+        
+        return bounds.offsetBy(dx: 5, dy: 0)
+    }
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        super.textRect(forBounds: bounds)
+        
+        return bounds.offsetBy(dx: 5, dy: 0)
+    }
+    
     // MARK: Methods
     
     func setup(viewModel: LoginEmailFieldViewModel) {

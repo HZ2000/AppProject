@@ -19,15 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: Helpers
+    
     private func configureAppFlow() {
         guard let navController = window?.rootViewController as? UINavigationController else { return }
         
         if UserService.shared.appWasLaunched() {
             let loginVC = UIViewController.getViewController(id: LoginViewController.storyboardId)
             navController.viewControllers = [loginVC]
-        } else if UserService.shared.userWasLoggedIn() {
-            
         }
+        
+        if UserService.shared.userWasLoggedIn() {
+            let loginVC = UIViewController.getViewController(id: HomeViewController.storyboardId)
+            navController.viewControllers = [loginVC]
+        }
+        
     }
 }
 

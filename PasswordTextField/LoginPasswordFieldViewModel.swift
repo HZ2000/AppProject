@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 
 class LoginPasswordFieldViewModel {
-    
     // MARK: Input
     
     let text: BehaviorRelay<String?> = BehaviorRelay(value: nil)
@@ -39,7 +38,5 @@ class LoginPasswordFieldViewModel {
             }
             .bind(to: isValid)
             .disposed(by: bag)
-        
-        
     }
 }
