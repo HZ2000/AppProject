@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MeW-ak-JwE">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -13,17 +13,17 @@
             <objects>
                 <viewController storyboardIdentifier="FirstHintViewController" title="First Hint View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OaQ-lb-Ahy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XFK-eF-XsV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map with human" translatesAutoresizingMaskIntoConstraints="NO" id="20x-JD-6fb">
-                                <rect key="frame" x="8" y="80" width="398" height="230"/>
+                                <rect key="frame" x="8" y="124" width="398" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="5wN-pL-UaR"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to TripCoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjB-nd-dAG">
-                                <rect key="frame" x="8" y="340" width="398" height="40"/>
+                                <rect key="frame" x="8" y="384" width="398" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IN2-lV-257"/>
                                 </constraints>
@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="TripCoin rewards you for travelling around Astralia whether you're going up the coast or just down the road." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfw-GK-1nD">
-                                <rect key="frame" x="8" y="410" width="398" height="263"/>
+                                <rect key="frame" x="8" y="454" width="398" height="345"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
@@ -64,17 +64,17 @@
             <objects>
                 <viewController storyboardIdentifier="SecondHintViewController" title="Second Hint View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JlO-TW-bMi" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cLd-xR-18r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="australia map" translatesAutoresizingMaskIntoConstraints="NO" id="GOh-db-Km3">
-                                <rect key="frame" x="8" y="80" width="398" height="230"/>
+                                <rect key="frame" x="8" y="124" width="398" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="6Er-46-5u6"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrX-Lu-kHd">
-                                <rect key="frame" x="8" y="340" width="398" height="120"/>
+                                <rect key="frame" x="8" y="384" width="398" height="120"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="h1B-ar-ctI"/>
@@ -107,17 +107,17 @@
             <objects>
                 <viewController storyboardIdentifier="ThirdHintViewController" title="Third Hint View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Jy-yd-Rk6" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NvX-0H-n9t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navigation" translatesAutoresizingMaskIntoConstraints="NO" id="BVc-pM-JCd">
-                                <rect key="frame" x="8" y="80" width="398" height="230"/>
+                                <rect key="frame" x="8" y="124" width="398" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="z38-Ir-foU"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nT-h2-MKH">
-                                <rect key="frame" x="8" y="340" width="398" height="100"/>
+                                <rect key="frame" x="8" y="384" width="398" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="R6X-2g-vPf"/>
@@ -128,7 +128,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="                        You'll need to stay inside a zone for at least one hour to receive Coins." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uae-8e-4LF">
-                                <rect key="frame" x="8" y="431" width="398" height="75"/>
+                                <rect key="frame" x="8" y="475" width="398" height="75"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="e50-c5-5Bv"/>
@@ -138,7 +138,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Remember:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jTv-s6-lxN">
-                                <rect key="frame" x="8" y="431" width="110" height="35"/>
+                                <rect key="frame" x="8" y="475" width="110" height="35"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="Mg4-DS-wjb"/>
@@ -175,17 +175,17 @@
             <objects>
                 <viewController storyboardIdentifier="FourthHintViewController" title="Fourth Hint View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GyB-oT-gKw" customClass="FourthHintViewController" customModule="Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aQ5-PD-sgu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coin Illustration" translatesAutoresizingMaskIntoConstraints="NO" id="sv6-Hg-wTj">
-                                <rect key="frame" x="8" y="80" width="398" height="230"/>
+                                <rect key="frame" x="8" y="124" width="398" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="GzD-7l-TDT"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Use them in the shop for exciting products, experiences and more!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqB-pD-B6o">
-                                <rect key="frame" x="8" y="380" width="398" height="60"/>
+                                <rect key="frame" x="8" y="424" width="398" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="750" constant="60" id="yYH-zO-Q5S"/>
@@ -195,7 +195,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Your Coins are securely stashed in your Vault.                                     " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQM-mP-J0o">
-                                <rect key="frame" x="8" y="325" width="398" height="60"/>
+                                <rect key="frame" x="8" y="369" width="398" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="gdS-Gd-fwT"/>
@@ -205,7 +205,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaD-T4-TVt">
-                                <rect key="frame" x="8" y="588.33333333333337" width="398" height="60"/>
+                                <rect key="frame" x="8" y="731" width="398" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="kC1-HC-q1T"/>
                                 </constraints>
@@ -256,17 +256,17 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="TUo-BL-sL8" customClass="LoginViewController" customModule="Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Py-c5-JDe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="fy3-J4-eXq">
-                                <rect key="frame" x="0.0" y="-44" width="414" height="304"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="304"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="304" id="xQb-jb-gRG"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCK-xm-eJc">
-                                <rect key="frame" x="25" y="165" width="364" height="300"/>
+                                <rect key="frame" x="25" y="209" width="364" height="300"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pt-H5-K9x">
                                         <rect key="frame" x="110" y="8" width="144" height="23"/>
@@ -330,7 +330,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="zZQ-FM-QOQ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" secureTextEntry="YES" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kml-g8-UzU">
                                                 <rect key="frame" x="0.0" y="185" width="309" height="20"/>
@@ -375,7 +375,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xh-tS-pHV">
-                                <rect key="frame" x="30" y="426" width="354" height="84"/>
+                                <rect key="frame" x="30" y="470" width="354" height="84"/>
                                 <state key="normal" title="Button" image="Login-btn">
                                     <color key="titleShadowColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -407,22 +407,118 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVY-sQ-iXH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3194.4000000000001" y="-613.04347826086962"/>
+            <point key="canvasLocation" x="3077" y="-608"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Users-->
         <scene sceneID="l2O-jG-3Ii">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="5Nl-Ss-N6m" customClass="HomeViewController" customModule="Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Bu-RF-UkA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1X5-ic-qO0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="Users" id="fTJ-i6-QEF">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="Main-Menu-Bar-Button" id="XoQ-Na-gSZ">
+                                            <connections>
+                                                <action selector="mainMenuBarButtonTapped:" destination="5Nl-Ss-N6m" id="HgG-st-ueb"/>
+                                                <segue destination="8zr-zK-TNt" kind="presentation" identifier="showSlidingMenu" modalPresentationStyle="fullScreen" id="idy-Y6-IbE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="1X5-ic-qO0" firstAttribute="trailing" secondItem="1dQ-TP-q9e" secondAttribute="trailing" id="OGY-UC-Wsq"/>
+                            <constraint firstItem="1X5-ic-qO0" firstAttribute="top" secondItem="1dQ-TP-q9e" secondAttribute="top" id="S9Z-hH-rfD"/>
+                            <constraint firstItem="1X5-ic-qO0" firstAttribute="leading" secondItem="1dQ-TP-q9e" secondAttribute="leading" id="dUr-JX-NWm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1dQ-TP-q9e"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="lKE-mB-yZi" appends="YES" id="WMA-th-yOw"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Users" leftItemsSupplementBackButton="YES" id="efb-rt-fTQ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Main-Menu-Bar-Button" id="Dua-hV-hZF"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mainMenuBarButtonItem" destination="XoQ-Na-gSZ" id="rYI-Ix-Dmh"/>
+                        <outlet property="mainMenuNavBar" destination="1X5-ic-qO0" id="ZVN-JX-Fug"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zT9-xy-pEf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="lKE-mB-yZi">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="edgePanGesture:" destination="5Nl-Ss-N6m" id="zOt-oB-NHS"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4101" y="-613"/>
+            <point key="canvasLocation" x="4080" y="-608"/>
+        </scene>
+        <!--Sliding Menu View Controller-->
+        <scene sceneID="XbA-qD-kEq">
+            <objects>
+                <viewController storyboardIdentifier="SlidingMenuViewController" id="8zr-zK-TNt" customClass="SlidingMenuViewController" customModule="Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ig8-NZ-skk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwk-rl-uKd">
+                                <rect key="frame" x="331.33333333333331" y="44" width="82.666666666666686" height="852"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZQ-5n-3Tb">
+                                <rect key="frame" x="19.999999999999993" y="712" width="111.33333333333331" height="50"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XEG-Ww-WK4"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="0.91539102159999997" green="0.21290674579999999" blue="0.17861340249999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapDoneButton:" destination="8zr-zK-TNt" eventType="touchUpInside" id="vVp-tW-gtR"/>
+                                    <segue destination="TUo-BL-sL8" kind="presentation" modalPresentationStyle="fullScreen" id="hDI-7B-FR3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="FZQ-5n-3Tb" firstAttribute="leading" secondItem="lou-37-gm8" secondAttribute="leading" constant="20" id="EoZ-X6-mIS"/>
+                            <constraint firstItem="lou-37-gm8" firstAttribute="bottom" secondItem="FZQ-5n-3Tb" secondAttribute="bottom" constant="100" id="Lnn-3z-egj"/>
+                            <constraint firstItem="pwk-rl-uKd" firstAttribute="top" secondItem="lou-37-gm8" secondAttribute="top" id="Pu6-Ls-bgv"/>
+                            <constraint firstItem="pwk-rl-uKd" firstAttribute="width" secondItem="Ig8-NZ-skk" secondAttribute="width" multiplier="0.2" id="qpi-H5-7FN"/>
+                            <constraint firstItem="lou-37-gm8" firstAttribute="trailing" secondItem="pwk-rl-uKd" secondAttribute="trailing" id="sZP-gS-xhS"/>
+                            <constraint firstItem="pwk-rl-uKd" firstAttribute="leading" secondItem="FZQ-5n-3Tb" secondAttribute="trailing" constant="200" id="sma-7J-Om9"/>
+                            <constraint firstItem="lou-37-gm8" firstAttribute="bottom" secondItem="pwk-rl-uKd" secondAttribute="bottom" constant="-34" id="yg9-Q3-Mz7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lou-37-gm8"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="l2S-Zi-QEt" appends="YES" id="NZ0-Ui-bF3"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="CKn-Qz-jHi"/>
+                    <connections>
+                        <outlet property="slidingMenuPanGesture" destination="l2S-Zi-QEt" id="omh-x6-J8p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nWc-9d-EOK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="l2S-Zi-QEt">
+                    <connections>
+                        <action selector="handleGesture:" destination="8zr-zK-TNt" id="bO0-lY-cpr"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="5007.2463768115949" y="-608.03571428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DJx-wP-gLo">
@@ -446,6 +542,7 @@
     <resources>
         <image name="Coin Illustration" width="364" height="318.33334350585938"/>
         <image name="Login-btn" width="368" height="84"/>
+        <image name="Main-Menu-Bar-Button" width="16.666666030883789" height="16.666666030883789"/>
         <image name="active" width="371" height="55"/>
         <image name="australia map" width="323.33334350585938" height="309"/>
         <image name="logo" width="414" height="340"/>

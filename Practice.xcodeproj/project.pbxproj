@@ -13,6 +13,7 @@
 		55757B4A25D2A43B00325F71 /* UITextField + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B4925D2A43B00325F71 /* UITextField + Ext.swift */; };
 		55757B4C25D2A46E00325F71 /* String Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B4B25D2A46E00325F71 /* String Ext.swift */; };
 		55757B4E25D2A48C00325F71 /* UIControl + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B4D25D2A48C00325F71 /* UIControl + Ext.swift */; };
+		55757B5025D2C7E400325F71 /* SlidingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55757B4F25D2C7E400325F71 /* SlidingMenuViewController.swift */; };
 		55A89ABE25C85E5F00E2633E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89ABD25C85E5F00E2633E /* AppDelegate.swift */; };
 		55A89AC525C85E5F00E2633E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A89AC325C85E5F00E2633E /* Main.storyboard */; };
 		55A89AC725C85E6000E2633E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A89AC625C85E6000E2633E /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		55757B4925D2A43B00325F71 /* UITextField + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Ext.swift"; sourceTree = "<group>"; };
 		55757B4B25D2A46E00325F71 /* String Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String Ext.swift"; sourceTree = "<group>"; };
 		55757B4D25D2A48C00325F71 /* UIControl + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl + Ext.swift"; sourceTree = "<group>"; };
+		55757B4F25D2C7E400325F71 /* SlidingMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingMenuViewController.swift; sourceTree = "<group>"; };
 		55A89ABA25C85E5F00E2633E /* Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A89ABD25C85E5F00E2633E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A89AC625C85E6000E2633E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				55757B4525D2725C00325F71 /* HomeViewController.swift */,
+				55757B4F25D2C7E400325F71 /* SlidingMenuViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -92,8 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				55A89ABC25C85E5F00E2633E /* Practice */,
-				55A89AD725C926B100E2633E /* Supporting Files */,
 				55A89ABB25C85E5F00E2633E /* Products */,
+				55A89AD725C926B100E2633E /* Supporting Files */,
 				6271A558BC72ABC78665BF60 /* Pods */,
 				977090B1ECEFE27AE91C6BFA /* Frameworks */,
 			);
@@ -353,6 +356,7 @@
 				55757B4A25D2A43B00325F71 /* UITextField + Ext.swift in Sources */,
 				55757B4625D2725C00325F71 /* HomeViewController.swift in Sources */,
 				55757B4E25D2A48C00325F71 /* UIControl + Ext.swift in Sources */,
+				55757B5025D2C7E400325F71 /* SlidingMenuViewController.swift in Sources */,
 				55A89ABE25C85E5F00E2633E /* AppDelegate.swift in Sources */,
 				55A89AF025CD752800E2633E /* LoginViewModel.swift in Sources */,
 				55A89AE525CADC9600E2633E /* UIViewController + Ext.swift in Sources */,

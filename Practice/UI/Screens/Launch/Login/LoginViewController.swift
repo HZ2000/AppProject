@@ -31,6 +31,8 @@ class LoginViewController: UIViewController {
         setupViewModel()
         setupViewModelBindings()
         configureViewsVisibility()
+        navigationController?.isNavigationBarHidden = true
+        navigationItem.backBarButtonItem?.isEnabled = false
     }
     
     // MARK: Properties
@@ -90,8 +92,7 @@ class LoginViewController: UIViewController {
             .loginSuccess
             .asObservable()
             .bind { _ in
-                let vc = HomeViewController()
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.goToHomeScreen()
             }
             .disposed(by: disposeBag)
     }
@@ -114,6 +115,12 @@ class LoginViewController: UIViewController {
         passwordErrorImageView.isHidden = true
         
         loginButton.addingShadows()
+    }
+    
+    private func goToHomeScreen() {
+        
+        let vc = storyboard!.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        navigationController?.viewControllers = [vc]
     }
 }
 
