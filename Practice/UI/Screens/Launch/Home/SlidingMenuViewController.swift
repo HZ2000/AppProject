@@ -19,17 +19,16 @@ class SlidingMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        
     }
     
     // MARK: Properties
     
     var interactor: Interactor? = nil
-
+    var delegate: SlidingMenuViewControllerDelegate?
     // MARK: Actions
     
-    @IBAction func didTapDoneButton(_ sender: Any) {
-        UserService.shared.setUserIsLoggedOut()
-    }
     
     @IBAction func handleGesture(_ sender: UIPanGestureRecognizer) {
         let translator = sender.translation(in: view)
@@ -43,4 +42,30 @@ class SlidingMenuViewController: UIViewController {
                 self.dismiss(animated: true, completion: nil)
         }
     }
+    
+    @IBAction func didTapUsersButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+        delegate?.userButton()
+    }
+    
+    @IBAction func didTapContactsButton(_ sender: Any) {
+        delegate?.contactsButton()
+    }
+    
+    @IBAction func didTapMediaButton(_ sender: Any) {
+        delegate?.mediaButton()
+    }
+    
+    @IBAction func didTapSignOutButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+        
+    }
 }
+
+protocol SlidingMenuViewControllerDelegate: AnyObject {
+    func userButton()
+    func contactsButton()
+    func mediaButton()
+    func signOutButton()
+}
+

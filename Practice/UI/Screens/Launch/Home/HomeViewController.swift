@@ -35,7 +35,6 @@ class HomeViewController: UIViewController {
     // MARK: Properties
     
     private let interactor = Interactor()
-    
     // MARK: Actions
     
     @IBAction func mainMenuBarButtonTapped(_ sender: Any) {
@@ -79,3 +78,24 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
         return interactor.hasStarted ? interactor : nil
     }
 }
+
+extension HomeViewController: SlidingMenuViewControllerDelegate {
+    func signOutButton() {
+        
+    }
+    
+    func userButton() {
+        
+    }
+    
+    func contactsButton() {
+        
+    }
+    
+    func mediaButton() {
+        
+    }
+    
+    
+}
+
