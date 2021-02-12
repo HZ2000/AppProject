@@ -44,7 +44,6 @@ class SlidingMenuViewController: UIViewController {
     }
     
     @IBAction func didTapUsersButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
         delegate?.userButton()
     }
     
@@ -57,8 +56,7 @@ class SlidingMenuViewController: UIViewController {
     }
     
     @IBAction func didTapSignOutButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-        
+        delegate?.signOutButton()
     }
 }
 

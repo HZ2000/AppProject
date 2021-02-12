@@ -7,81 +7,82 @@
 //
 
 import UIKit
-import NavigationDrawer
+import SideMenu
 
 class HomeViewController: UIViewController {
     static let storyboardId = "HomeViewController"
-    
-    // MARK: Outlets
-    
-    @IBOutlet weak var mainMenuBarButtonItem: UIBarButtonItem!
-    @IBOutlet weak var mainMenuNavBar: UINavigationBar!
     
     // MARK: View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: self)
-        if let destinationViewController = segue.destination as? SlidingMenuViewController {
-            destinationViewController.transitioningDelegate = self
-            destinationViewController.interactor = self.interactor
-        }
+        
+        navigationControllerSetup()
     }
     
     // MARK: Properties
     
-    private let interactor = Interactor()
+    private lazy var slideInMenuPadding: CGFloat = self.view.frame.width * 0.30
+    private var isSlideInMenuPresented = false
+    
+    lazy var slidingViewController = SlidingMenuViewController()
+    
+    lazy var menuView: UIView = {
+        let slidingVC = UIViewController.getViewController(id: "SlidingMenuViewController") as! SlidingMenuViewController
+        let slidingView = slidingVC.view
+        return slidingView!
+    }()
+    
+    lazy var containerView: UIView = {
+       let view = UIView()
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemGray5
+        } else {
+
+        }
+        return view
+    }()
+    
+    lazy var menuBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Main-Menu-Bar-Button"), style: .done, target: self, action: #selector(didTapMenuButton))
+    
     // MARK: Actions
     
-    @IBAction func mainMenuBarButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "showSlidingMenu", sender: self)
-        view.isOpaque = true
-    }
-    
-    @IBAction func edgePanGesture(_ sender: UIScreenEdgePanGestureRecognizer) {
-        let translation = sender.translation(in: view)
-        let progress = MenuHelper.calculateProgress(translationInView: translation, viewBounds: view.bounds, direction: .Left)
-        
-        MenuHelper.mapGestureStateToInteractor(
-            gestureState: sender.state,
-            progress: progress,
-            interactor: interactor){
-                self.performSegue(withIdentifier: "showSlidingMenu", sender: nil)
+    @objc private func didTapMenuButton(_ sender: Any) {
+        slidingViewController.delegate = self
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                self.containerView.frame.origin.x = self.isSlideInMenuPresented ? 0 : self.containerView.frame.width -  self.slideInMenuPadding
+            }, completion: {(finished) in
+                print("Animation finished: \(finished)")
+                self.isSlideInMenuPresented.toggle()
+                })
         }
     }
     
+    @IBAction func edgePanGesture(_ sender: UIScreenEdgePanGestureRecognizer) {
+        
+    }
+    
     // MARK: Helpers
-
-}
-
-// MARK: UIViewControllerTransitioningDelegate
-
-extension HomeViewController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return PresentMenuAnimator(direction: Direction.Left)
-    }
     
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        view.isOpaque = false
-        return DismissMenuAnimator()
+    private func navigationControllerSetup() {
+        navigationController?.isNavigationBarHidden = false
+        navigationItem.setLeftBarButton(menuBarButton, animated: false)
+        menuView.pinMenuTo(view, with: slideInMenuPadding)
+        containerView.edgeTo(view)
     }
-    
-    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return interactor.hasStarted ? interactor : nil
-    }
-    
-    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return interactor.hasStarted ? interactor : nil
-    }
+
 }
 
 extension HomeViewController: SlidingMenuViewControllerDelegate {
     func signOutButton() {
-        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            self.containerView.frame.origin.x = self.isSlideInMenuPresented ? 0 : self.containerView.frame.width -  self.slideInMenuPadding
+        }, completion: {(finished) in
+            print("Animation finished: \(finished)")
+            self.isSlideInMenuPresented.toggle()
+            })
+        view.backgroundColor = .black
     }
     
     func userButton() {
@@ -95,7 +96,5 @@ extension HomeViewController: SlidingMenuViewControllerDelegate {
     func mediaButton() {
         
     }
-    
-    
 }
 

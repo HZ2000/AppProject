@@ -10,5 +10,7 @@ target 'Practice' do
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'NavigationDrawer'
-
+pod 'MaterialComponents/NavigationDrawer'
+pod 'MaterialComponents/AppBar'
+pod 'SideMenu' , '~> 5.0'
 end
