@@ -417,28 +417,94 @@
                     <view key="view" contentMode="scaleToFill" id="0Bu-RF-UkA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Iq-bG-g76">
+                                <rect key="frame" x="0.0" y="-6" width="414" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vF-zA-jrU">
+                                        <rect key="frame" x="20" y="55" width="35" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="nwR-8j-QHk"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Main-Menu-Bar-Button"/>
+                                        <connections>
+                                            <action selector="didTapMenuButton:" destination="5Nl-Ss-N6m" eventType="touchUpInside" id="hNz-0O-ib5"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Users" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-kY-NTM">
+                                        <rect key="frame" x="127" y="56" width="159" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="2vF-zA-jrU" firstAttribute="top" secondItem="1Iq-bG-g76" secondAttribute="top" constant="55" id="65x-YD-fro"/>
+                                    <constraint firstItem="2vF-zA-jrU" firstAttribute="leading" secondItem="1Iq-bG-g76" secondAttribute="leading" constant="20" id="DPh-59-pRM"/>
+                                    <constraint firstItem="wXu-kY-NTM" firstAttribute="leading" secondItem="1Iq-bG-g76" secondAttribute="leading" constant="127" id="Flq-V3-nKv"/>
+                                    <constraint firstAttribute="trailing" secondItem="wXu-kY-NTM" secondAttribute="trailing" constant="128" id="qlf-hc-XrB"/>
+                                    <constraint firstItem="wXu-kY-NTM" firstAttribute="top" secondItem="1Iq-bG-g76" secondAttribute="top" constant="56" id="shM-Pw-jon"/>
+                                    <constraint firstAttribute="height" constant="90" id="tYL-oj-Xr7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="1dQ-TP-q9e" firstAttribute="trailing" secondItem="1Iq-bG-g76" secondAttribute="trailing" id="N9t-WD-apY"/>
+                            <constraint firstItem="1Iq-bG-g76" firstAttribute="top" secondItem="1dQ-TP-q9e" secondAttribute="top" constant="-50" id="hAY-bm-hOx"/>
+                            <constraint firstItem="1Iq-bG-g76" firstAttribute="leading" secondItem="1dQ-TP-q9e" secondAttribute="leading" id="qXj-ej-R6M"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1dQ-TP-q9e"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="lKE-mB-yZi" appends="YES" id="WMA-th-yOw"/>
+                            <outletCollection property="gestureRecognizers" destination="Lu2-JY-TgI" appends="YES" id="kr5-FA-TmU"/>
+                            <outletCollection property="gestureRecognizers" destination="Al3-3q-DXJ" appends="YES" id="Hyk-my-szG"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="menuButton" destination="2vF-zA-jrU" id="0Qv-2f-ByC"/>
+                        <outlet property="menuLabel" destination="wXu-kY-NTM" id="Q14-64-BPg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zT9-xy-pEf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="lKE-mB-yZi">
-                    <rectEdge key="edges" left="YES"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Lu2-JY-TgI">
+                    <scrollTypes key="allowedScrollTypesMask" continuous="YES"/>
                     <connections>
-                        <action selector="edgePanGesture:" destination="5Nl-Ss-N6m" id="zOt-oB-NHS"/>
+                        <action selector="didTapScreen:" destination="5Nl-Ss-N6m" id="9m3-Ly-Iwr"/>
                     </connections>
-                </screenEdgePanGestureRecognizer>
+                </panGestureRecognizer>
+                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="right" id="Al3-3q-DXJ">
+                    <connections>
+                        <action selector="didSwipeScreen:" destination="5Nl-Ss-N6m" id="oJI-bV-dGr"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4142" y="-621"/>
+            <point key="canvasLocation" x="5654" y="-82"/>
+        </scene>
+        <!--Side Menu Controller-->
+        <scene sceneID="BDf-IQ-5vA">
+            <objects>
+                <viewController storyboardIdentifier="SideMenuController" id="HKs-mC-kYg" customClass="SideMenuController" customModule="SideMenuSwift" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z8M-Pu-zge">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="MBD-zJ-28S"/>
+                    </view>
+                    <connections>
+                        <segue destination="rxN-kf-d3j" kind="custom" identifier="SideMenu.Menu" customClass="SideMenuSegue" customModule="SideMenuSwift" id="L16-7v-N17"/>
+                        <segue destination="5Nl-Ss-N6m" kind="custom" identifier="SideMenu.Content" customClass="SideMenuSegue" customModule="SideMenuSwift" id="mfQ-pv-kEb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I6h-RD-lDb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4345" y="-595"/>
         </scene>
         <!--Sliding Menu View Controller-->
         <scene sceneID="XbA-qD-kEq">
             <objects>
-                <viewController storyboardIdentifier="SlidingMenuViewController" modalTransitionStyle="flipHorizontal" id="8zr-zK-TNt" customClass="SlidingMenuViewController" customModule="Practice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SlidingMenuViewController" modalTransitionStyle="flipHorizontal" id="8zr-zK-TNt" customClass="SlidingMenuViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ig8-NZ-skk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -488,15 +554,6 @@
                                 </constraints>
                                 <connections>
                                     <action selector="didTapUsersButton:" destination="8zr-zK-TNt" eventType="touchUpInside" id="pw2-t1-OGQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u52-kM-9Ig">
-                                <rect key="frame" x="0.0" y="224" width="344" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="2Qk-yJ-MtX"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="didTapContactsButton:" destination="8zr-zK-TNt" eventType="touchUpInside" id="gPv-12-JgJ"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YO6-AB-9wx">
@@ -551,7 +608,6 @@
                                 </constraints>
                                 <connections>
                                     <action selector="didTapSignOutButton:" destination="8zr-zK-TNt" eventType="touchUpInside" id="NbT-e3-9Qv"/>
-                                    <segue destination="TUo-BL-sL8" kind="presentation" modalPresentationStyle="fullScreen" id="XfL-I2-ORJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FY6-hG-WLv">
@@ -561,6 +617,15 @@
                                 </constraints>
                                 <connections>
                                     <action selector="didTapMediaButton:" destination="8zr-zK-TNt" eventType="touchUpInside" id="j9D-Z3-h7K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u52-kM-9Ig">
+                                <rect key="frame" x="-13" y="219" width="344" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="2Qk-yJ-MtX"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="didTapContactsButton:" destination="8zr-zK-TNt" eventType="touchUpInside" id="gPv-12-JgJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -575,16 +640,16 @@
                             <constraint firstItem="OhZ-cz-gle" firstAttribute="top" secondItem="lou-37-gm8" secondAttribute="top" constant="95" id="6Ku-wI-zIb"/>
                             <constraint firstItem="v86-Qs-ged" firstAttribute="top" secondItem="lou-37-gm8" secondAttribute="top" constant="95" id="6xO-mc-0TQ"/>
                             <constraint firstItem="pwk-rl-uKd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sXn-3Z-A2q" secondAttribute="trailing" constant="8" symbolic="YES" id="9J0-hy-QDx"/>
-                            <constraint firstItem="u52-kM-9Ig" firstAttribute="leading" secondItem="lou-37-gm8" secondAttribute="leading" id="AGW-tK-AK1"/>
+                            <constraint firstItem="u52-kM-9Ig" firstAttribute="leading" secondItem="lou-37-gm8" secondAttribute="leading" constant="-13" id="AGW-tK-AK1"/>
                             <constraint firstItem="Jzg-T5-rfI" firstAttribute="top" secondItem="ATE-8g-fZx" secondAttribute="top" constant="10" id="Aio-9U-ijz"/>
-                            <constraint firstItem="u52-kM-9Ig" firstAttribute="top" secondItem="UMq-Ty-E74" secondAttribute="bottom" constant="20" id="BI8-RW-lfV"/>
+                            <constraint firstItem="u52-kM-9Ig" firstAttribute="top" secondItem="UMq-Ty-E74" secondAttribute="bottom" constant="15" id="BI8-RW-lfV"/>
                             <constraint firstItem="lou-37-gm8" firstAttribute="bottom" secondItem="ATE-8g-fZx" secondAttribute="bottom" constant="120" id="Dvu-Zb-BpA"/>
                             <constraint firstItem="UMq-Ty-E74" firstAttribute="leading" secondItem="lou-37-gm8" secondAttribute="leading" id="FAz-mg-2z0"/>
                             <constraint firstItem="KW6-zy-PhR" firstAttribute="leading" secondItem="lou-37-gm8" secondAttribute="leading" constant="20" id="GOg-8g-3FY"/>
                             <constraint firstItem="UMq-Ty-E74" firstAttribute="top" secondItem="lou-37-gm8" secondAttribute="top" constant="90" id="IhN-1q-iKQ"/>
                             <constraint firstItem="pwk-rl-uKd" firstAttribute="leading" secondItem="UMq-Ty-E74" secondAttribute="trailing" id="Plr-mI-tDy"/>
                             <constraint firstItem="pwk-rl-uKd" firstAttribute="top" secondItem="lou-37-gm8" secondAttribute="top" id="Pu6-Ls-bgv"/>
-                            <constraint firstItem="FY6-hG-WLv" firstAttribute="top" secondItem="u52-kM-9Ig" secondAttribute="bottom" constant="20" id="Q3G-aY-37o"/>
+                            <constraint firstItem="FY6-hG-WLv" firstAttribute="top" secondItem="u52-kM-9Ig" secondAttribute="bottom" constant="25" id="Q3G-aY-37o"/>
                             <constraint firstItem="YO6-AB-9wx" firstAttribute="top" secondItem="sXn-3Z-A2q" secondAttribute="bottom" constant="40" id="RX1-V3-HVW"/>
                             <constraint firstItem="bLG-5G-8v3" firstAttribute="leading" secondItem="lou-37-gm8" secondAttribute="leading" constant="20" id="Rri-UD-55r"/>
                             <constraint firstItem="sXn-3Z-A2q" firstAttribute="leading" secondItem="KW6-zy-PhR" secondAttribute="trailing" constant="15" id="S2f-QD-9wo"/>
@@ -595,7 +660,7 @@
                             <constraint firstItem="yDe-wL-p8Z" firstAttribute="top" secondItem="bLG-5G-8v3" secondAttribute="top" constant="-10" id="chX-CL-v1k"/>
                             <constraint firstItem="OhZ-cz-gle" firstAttribute="leading" secondItem="v86-Qs-ged" secondAttribute="trailing" constant="15" id="ezs-oH-f5Q"/>
                             <constraint firstItem="KW6-zy-PhR" firstAttribute="top" secondItem="v86-Qs-ged" secondAttribute="bottom" constant="40" id="htT-c3-0gx"/>
-                            <constraint firstItem="u52-kM-9Ig" firstAttribute="trailing" secondItem="pwk-rl-uKd" secondAttribute="trailing" constant="-70" id="mdX-G8-SsA"/>
+                            <constraint firstItem="u52-kM-9Ig" firstAttribute="trailing" secondItem="pwk-rl-uKd" secondAttribute="trailing" constant="-83" id="mdX-G8-SsA"/>
                             <constraint firstItem="v86-Qs-ged" firstAttribute="leading" secondItem="lou-37-gm8" secondAttribute="leading" constant="20" id="njF-A8-Nfh"/>
                             <constraint firstItem="pwk-rl-uKd" firstAttribute="width" secondItem="Ig8-NZ-skk" secondAttribute="width" multiplier="0.2" id="qpi-H5-7FN"/>
                             <constraint firstItem="YO6-AB-9wx" firstAttribute="leading" secondItem="lou-37-gm8" secondAttribute="leading" constant="20" id="sYg-eF-6GS"/>
@@ -620,7 +685,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="5014" y="-621"/>
+            <point key="canvasLocation" x="6736" y="-1142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DJx-wP-gLo">
@@ -641,10 +706,29 @@
             </objects>
             <point key="canvasLocation" x="1303" y="-608"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rcn-Zw-dXv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="rxN-kf-d3j" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HRN-3l-HYd">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8zr-zK-TNt" kind="relationship" relationship="rootViewController" id="fhJ-UJ-OeD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jg7-jg-LMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5655" y="-1142"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Coin Illustration" width="364" height="318.33334350585938"/>
         <image name="Login-btn" width="368" height="84"/>
+        <image name="Main-Menu-Bar-Button" width="16.666666030883789" height="16.666666030883789"/>
         <image name="active" width="371" height="55"/>
         <image name="arrow.left.circle" catalog="system" width="128" height="121"/>
         <image name="australia map" width="323.33334350585938" height="309"/>

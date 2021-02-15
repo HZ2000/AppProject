@@ -12,5 +12,5 @@ pod 'RxCocoa'
 pod 'NavigationDrawer'
 pod 'MaterialComponents/NavigationDrawer'
 pod 'MaterialComponents/AppBar'
-pod 'SideMenu' , '~> 5.0'
+pod 'SideMenuSwift'
 end

@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SideMenuSwift
 
 class LoginViewController: UIViewController {
     static let storyboardId = "LoginViewController"
@@ -119,8 +120,10 @@ class LoginViewController: UIViewController {
     
     private func goToHomeScreen() {
         
-        let vc = storyboard!.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        navigationController?.viewControllers = [vc]
+        let contentVC = storyboard!.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        let menuVC = storyboard!.instantiateViewController(withIdentifier: "SlidingMenuViewController") as! SlidingMenuViewController
+        let mainVC = SideMenuController(contentViewController: contentVC, menuViewController: menuVC)
+        navigationController?.viewControllers = [mainVC]
     }
 }
 

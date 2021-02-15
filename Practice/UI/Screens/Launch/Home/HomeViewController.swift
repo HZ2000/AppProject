@@ -7,82 +7,54 @@
 //
 
 import UIKit
-import SideMenu
+import SideMenuSwift
 
 class HomeViewController: UIViewController {
     static let storyboardId = "HomeViewController"
+    
+    // MARK: Outlets
+    
+    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var menuLabel: UILabel!
     
     // MARK: View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationControllerSetup()
+        self.sideMenuController?.revealMenu()
     }
+
     
     // MARK: Properties
-    
-    private lazy var slideInMenuPadding: CGFloat = self.view.frame.width * 0.30
-    private var isSlideInMenuPresented = false
-    
-    lazy var slidingViewController = SlidingMenuViewController()
-    
-    lazy var menuView: UIView = {
-        let slidingVC = UIViewController.getViewController(id: "SlidingMenuViewController") as! SlidingMenuViewController
-        let slidingView = slidingVC.view
-        return slidingView!
-    }()
-    
-    lazy var containerView: UIView = {
-       let view = UIView()
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .systemGray5
-        } else {
 
+    lazy var menuViewController: SlidingMenuViewController = {
+        if let slidingVC = UIViewController.getViewController(id: "SlidingMenuViewController") as? SlidingMenuViewController {
+            slidingVC.delegate = self
+            return slidingVC
         }
-        return view
+        return UIViewController() as! SlidingMenuViewController
     }()
-    
-    lazy var menuBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Main-Menu-Bar-Button"), style: .done, target: self, action: #selector(didTapMenuButton))
     
     // MARK: Actions
     
-    @objc private func didTapMenuButton(_ sender: Any) {
-        slidingViewController.delegate = self
-        DispatchQueue.main.async {
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-                self.containerView.frame.origin.x = self.isSlideInMenuPresented ? 0 : self.containerView.frame.width -  self.slideInMenuPadding
-            }, completion: {(finished) in
-                print("Animation finished: \(finished)")
-                self.isSlideInMenuPresented.toggle()
-                })
-        }
-    }
-    
-    @IBAction func edgePanGesture(_ sender: UIScreenEdgePanGestureRecognizer) {
-        
+    @IBAction func didTapMenuButton(_ sender: Any) {
+        sideMenuController?.revealMenu()
     }
     
     // MARK: Helpers
     
-    private func navigationControllerSetup() {
-        navigationController?.isNavigationBarHidden = false
-        navigationItem.setLeftBarButton(menuBarButton, animated: false)
-        menuView.pinMenuTo(view, with: slideInMenuPadding)
-        containerView.edgeTo(view)
+    private func popToLoginPage() {
+        if let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+            self.navigationController?.viewControllers = [loginVC, self]
+            self.navigationController?.popViewController(animated: false)
+        }
     }
 
 }
 
 extension HomeViewController: SlidingMenuViewControllerDelegate {
     func signOutButton() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-            self.containerView.frame.origin.x = self.isSlideInMenuPresented ? 0 : self.containerView.frame.width -  self.slideInMenuPadding
-        }, completion: {(finished) in
-            print("Animation finished: \(finished)")
-            self.isSlideInMenuPresented.toggle()
-            })
-        view.backgroundColor = .black
+       
     }
     
     func userButton() {

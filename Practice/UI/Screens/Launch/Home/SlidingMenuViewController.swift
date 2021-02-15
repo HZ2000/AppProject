@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import NavigationDrawer
+import SideMenuSwift
 
-class SlidingMenuViewController: UIViewController {
+class SlidingMenuViewController: UIViewController  {
     
     // MARK: Outlets
     
@@ -25,23 +25,10 @@ class SlidingMenuViewController: UIViewController {
     
     // MARK: Properties
     
-    var interactor: Interactor? = nil
     var delegate: SlidingMenuViewControllerDelegate?
     // MARK: Actions
     
-    
-    @IBAction func handleGesture(_ sender: UIPanGestureRecognizer) {
-        let translator = sender.translation(in: view)
-        
-        let progress = MenuHelper.calculateProgress(translationInView: translator, viewBounds: view.bounds, direction: .Left)
-        
-        MenuHelper.mapGestureStateToInteractor(
-            gestureState: sender.state,
-            progress: progress,
-            interactor: interactor){
-                self.dismiss(animated: true, completion: nil)
-        }
-    }
+
     
     @IBAction func didTapUsersButton(_ sender: Any) {
         delegate?.userButton()
