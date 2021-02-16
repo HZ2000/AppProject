@@ -146,6 +146,7 @@
 		55A89ADF25CAD7F400E2633E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E51C3C6A25DC001D00085684 /* Profile */,
 				55A89AE025CAD7FC00E2633E /* Launch */,
 			);
 			path = Screens;
@@ -154,7 +155,6 @@
 		55A89AE025CAD7FC00E2633E /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				55757B4425D2724B00325F71 /* Home */,
 				55A89AE125CAD80900E2633E /* Intro */,
 				55A89AE225CAD82600E2633E /* Login */,
 			);
@@ -234,6 +234,14 @@
 				3EC5931500B896914D8E02D8 /* Pods_Practice.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E51C3C6A25DC001D00085684 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				55757B4425D2724B00325F71 /* Home */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

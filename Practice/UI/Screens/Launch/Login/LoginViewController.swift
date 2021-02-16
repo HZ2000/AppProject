@@ -119,13 +119,12 @@ class LoginViewController: UIViewController {
     }
     
     private func goToHomeScreen() {
-        guard let vc = UIViewController.getViewController(id: "HomeViewController") as? HomeViewController else {
+        guard let vc = UIViewController.getViewController(id: HomeViewController.storyboardId) as? HomeViewController else {
             return
         }
         
         DispatchQueue.main.async {
             self.navigationController?.pushViewController(vc, animated: true)
-            
         }
     }
 }

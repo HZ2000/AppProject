@@ -24,7 +24,6 @@ struct Validation {
         return isValid
     }
     
-    
     // MARK: Helpers
     
     private static func validateSize(_ value: String, size: (min:Int, max:Int)) -> Bool {

@@ -27,7 +27,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     // MARK: Actions
     
     @objc private func didTapMenuButton(_ sender: Any) {
-        guard let menuViewController = UIViewController.getViewController(id: "SlidingMenuViewController") as? SlidingMenuViewController else { return }
+        guard let menuViewController = UIViewController.getViewController(id: SlidingMenuViewController.storyboardId) as? SlidingMenuViewController else { return }
         
         menuViewController.delegate = self
         menuViewController.transitioningDelegate = self
@@ -53,7 +53,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     private func popToLoginPage() {
-        if let loginVC = UIViewController.getViewController(id: "LoginViewController") as? LoginViewController {
+        if let loginVC = UIViewController.getViewController(id: LoginViewController.storyboardId) as? LoginViewController {
             self.navigationController?.viewControllers = [loginVC, self]
             self.navigationController?.popViewController(animated: true)
         }

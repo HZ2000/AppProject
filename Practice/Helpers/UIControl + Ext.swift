@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 extension UIControl {
     func addingShadows() {
         self.layer.shadowOpacity = 0.5

@@ -9,7 +9,8 @@
 import UIKit
 
 class SlidingMenuViewController: UIViewController  {
-    
+    static let storyboardId = "SlidingMenuViewController"
+
     // MARK: View life cycle
     
     override func viewDidLoad() {
