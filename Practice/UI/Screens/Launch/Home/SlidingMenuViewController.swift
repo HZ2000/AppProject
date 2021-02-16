@@ -28,26 +28,26 @@ class SlidingMenuViewController: UIViewController  {
     }
     
     @IBAction func didTapUsersButton(_ sender: Any) {
-        delegate?.userButton()
+        delegate?.usersButtonTapped()
     }
 
     @IBAction func didTapContactsButton(_ sender: Any) {
-        delegate?.contactsButton()
+        delegate?.contactsButtonTapped()
     }
     
     @IBAction func didTapMediaButton(_ sender: Any) {
-        delegate?.mediaButton()
+        delegate?.mediaButtonTapped()
     }
     
     @IBAction func didTapSignOutButton(_ sender: Any) {
-        delegate?.signOutButton()
+        delegate?.signOutButtonTapped()
     }
 }
 
 protocol SlidingMenuViewControllerDelegate: AnyObject {
-    func userButton()
-    func contactsButton()
-    func mediaButton()
-    func signOutButton()
+    func usersButtonTapped()
+    func contactsButtonTapped()
+    func mediaButtonTapped()
+    func signOutButtonTapped()
 }
 

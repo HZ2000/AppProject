@@ -22,6 +22,12 @@ struct Constants {
         case invalidPassword = "Invalid Password"
         case invalidEmail = "Invalid Email"
     }
+    
+    enum SlidingMenu: String {
+        case users = "Users"
+        case contacts = "Contacts"
+        case media = "Media"
+    }
 }
 
 

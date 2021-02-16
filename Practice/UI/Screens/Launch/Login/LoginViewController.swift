@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
         setupViewModel()
         setupViewModelBindings()
         configureViewsVisibility()
+        
         navigationController?.isNavigationBarHidden = true
         navigationItem.backBarButtonItem?.isEnabled = false
     }
@@ -118,9 +119,14 @@ class LoginViewController: UIViewController {
     }
     
     private func goToHomeScreen() {
+        guard let vc = UIViewController.getViewController(id: "HomeViewController") as? HomeViewController else {
+            return
+        }
         
-        let vc = storyboard!.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        navigationController?.viewControllers = [vc]
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
     }
 }
 

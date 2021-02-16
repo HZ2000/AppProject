@@ -25,14 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if UserService.shared.appWasLaunched() && !UserService.shared.userWasLoggedIn() {
             let loginVC = UIViewController.getViewController(id: LoginViewController.storyboardId)
+            
             navController.viewControllers = [loginVC]
             return
         } else if UserService.shared.userWasLoggedIn() {
             let homeVC = UIViewController.getViewController(id: HomeViewController.storyboardId)
+            
             navController.viewControllers = [homeVC]
             return
         }
-        
     }
 }
 

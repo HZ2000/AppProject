@@ -27,10 +27,16 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     // MARK: Actions
     
     @objc private func didTapMenuButton(_ sender: Any) {
-        guard let menuViewController = storyboard?.instantiateViewController(withIdentifier: "SlidingMenuViewController") as? SlidingMenuViewController else { return }
+        guard let menuViewController = UIViewController.getViewController(id: "SlidingMenuViewController") as? SlidingMenuViewController else { return }
+        
         menuViewController.delegate = self
-        menuViewController.modalPresentationStyle = .overCurrentContext
         menuViewController.transitioningDelegate = self
+        
+        menuViewController.modalPresentationStyle = .overCurrentContext
+        
+        let panGesture = UITapGestureRecognizer(target: self, action: #selector(didTapScreenEdge))
+        transiton.dimmingView.addGestureRecognizer(panGesture)
+        
         present(menuViewController, animated: true)
     }
     
@@ -42,41 +48,45 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private func navigationControllerSetup() {
         navigationController?.isNavigationBarHidden = false
-        navigationItem.title = "Users"
+        navigationItem.title = Constants.SlidingMenu.users.rawValue
         navigationItem.setLeftBarButton(menuBarButton, animated: false)
     }
     
     private func popToLoginPage() {
-        if let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+        if let loginVC = UIViewController.getViewController(id: "LoginViewController") as? LoginViewController {
             self.navigationController?.viewControllers = [loginVC, self]
-            self.navigationController?.popViewController(animated: false)
+            self.navigationController?.popViewController(animated: true)
         }
     }
-
+    
+    @objc private func didTapScreenEdge() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: SlidingMenuViewControllerDelegate
 
 extension HomeViewController: SlidingMenuViewControllerDelegate {
-    func signOutButton() {
-        dismiss(animated: true, completion: nil)
-        self.popToLoginPage()
-        UserService.shared.setUserIsLoggedOut()
+    func signOutButtonTapped() {
+        dismiss(animated: true) {
+            self.popToLoginPage()
+            UserService.shared.setUserIsLoggedOut()
+        }
     }
     
-    func userButton() {
-        dismiss(animated: true, completion: nil)
-        navigationItem.title = "Users"
+    func usersButtonTapped() {
+        dismiss(animated: true,completion: nil)
+        navigationItem.title = Constants.SlidingMenu.users.rawValue
     }
     
-    func contactsButton() {
-        dismiss(animated: true, completion: nil)
-        navigationItem.title = "Contacts"
+    func contactsButtonTapped() {
+        dismiss(animated: true,completion: nil)
+        navigationItem.title = Constants.SlidingMenu.contacts.rawValue
     }
     
-    func mediaButton() {
-        dismiss(animated: true, completion: nil)
-        navigationItem.title = "Media"
+    func mediaButtonTapped() {
+        dismiss(animated: true,completion: nil)
+        navigationItem.title = Constants.SlidingMenu.media.rawValue
     }
 }
 

@@ -447,6 +447,10 @@
                                 <rect key="frame" x="331.33333333333331" y="44" width="82.666666666666686" height="852"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="k1b-5I-AFU" appends="YES" id="SwV-gf-HRR"/>
+                                    <outletCollection property="gestureRecognizers" destination="N0x-hi-kJz" appends="YES" id="8Dl-AS-rKz"/>
+                                </connections>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="v86-Qs-ged">
                                 <rect key="frame" x="20" y="140.66666666666666" width="55" height="52.333333333333343"/>
@@ -604,9 +608,6 @@
                             <constraint firstItem="lou-37-gm8" firstAttribute="bottom" secondItem="pwk-rl-uKd" secondAttribute="bottom" constant="-34" id="yg9-Q3-Mz7"/>
                             <constraint firstItem="yDe-wL-p8Z" firstAttribute="leading" secondItem="lou-37-gm8" secondAttribute="leading" id="zcP-fi-a36"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="k1b-5I-AFU" appends="YES" id="JVX-00-jTa"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="CKn-Qz-jHi"/>
                 </viewController>
@@ -616,6 +617,11 @@
                         <action selector="swipeMenuPanGesture:" destination="8zr-zK-TNt" id="vCG-G0-7zk"/>
                     </connections>
                 </panGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="N0x-hi-kJz">
+                    <connections>
+                        <action selector="swipeMenuEdgePanGesture:" destination="8zr-zK-TNt" id="w5b-ax-gZk"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5312" y="-608"/>
         </scene>
