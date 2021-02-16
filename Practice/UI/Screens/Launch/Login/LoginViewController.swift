@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import SideMenuSwift
 
 class LoginViewController: UIViewController {
     static let storyboardId = "LoginViewController"
@@ -61,7 +60,7 @@ class LoginViewController: UIViewController {
         
         viewModel
             .emailErrorDescript
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .bind(to: emailErrorLabel.rx.text)
             .disposed(by: disposeBag)
         
@@ -70,13 +69,13 @@ class LoginViewController: UIViewController {
             .map { (strOptional) -> Bool in
                 return (strOptional == nil)
             }
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .bind(to: emailErrorImageView.rx.isHidden)
             .disposed(by: disposeBag)
         
         viewModel
             .passwordErrorDescript
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .bind(to: passwordErrorLabel.rx.text)
             .disposed(by: disposeBag)
         
@@ -85,7 +84,7 @@ class LoginViewController: UIViewController {
             .map { (strOptional) -> Bool in
                 return (strOptional == nil)
             }
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .bind(to: passwordErrorImageView.rx.isHidden)
             .disposed(by: disposeBag)
         
@@ -120,10 +119,8 @@ class LoginViewController: UIViewController {
     
     private func goToHomeScreen() {
         
-        let contentVC = storyboard!.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        let menuVC = storyboard!.instantiateViewController(withIdentifier: "SlidingMenuViewController") as! SlidingMenuViewController
-        let mainVC = SideMenuController(contentViewController: contentVC, menuViewController: menuVC)
-        navigationController?.viewControllers = [mainVC]
+        let vc = storyboard!.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        navigationController?.viewControllers = [vc]
     }
 }
 

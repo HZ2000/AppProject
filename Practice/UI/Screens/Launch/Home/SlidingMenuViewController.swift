@@ -7,33 +7,30 @@
 //
 
 import UIKit
-import SideMenuSwift
 
 class SlidingMenuViewController: UIViewController  {
-    
-    // MARK: Outlets
-    
-    @IBOutlet var slidingMenuPanGesture: UIPanGestureRecognizer!
     
     // MARK: View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
     }
     
     // MARK: Properties
     
     var delegate: SlidingMenuViewControllerDelegate?
-    // MARK: Actions
     
+    // MARK: Actions
 
+    @IBAction func swipeMenuPanGesture(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func didTapUsersButton(_ sender: Any) {
         delegate?.userButton()
     }
-    
+
     @IBAction func didTapContactsButton(_ sender: Any) {
         delegate?.contactsButton()
     }

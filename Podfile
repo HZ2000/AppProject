@@ -9,8 +9,4 @@ target 'Practice' do
 
 pod 'RxSwift'
 pod 'RxCocoa'
-pod 'NavigationDrawer'
-pod 'MaterialComponents/NavigationDrawer'
-pod 'MaterialComponents/AppBar'
-pod 'SideMenuSwift'
 end

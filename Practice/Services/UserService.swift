@@ -33,11 +33,7 @@ class UserService {
     func userWasLoggedIn() -> Bool {
         return defaults.bool(forKey: Constants.UserDefaultsKey.userIsLogged.rawValue)
     }
-    
-    func userWasLoggedOut() -> Bool {
-        return defaults.bool(forKey: Constants.UserDefaultsKey.userIsLogged.rawValue)
-    }
-    
+
     func setUserIsLoggedIn() {
         defaults.set(true, forKey: Constants.UserDefaultsKey.userIsLogged.rawValue)
         defaults.synchronize()

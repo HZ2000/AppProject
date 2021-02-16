@@ -23,14 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func configureAppFlow() {
         guard let navController = window?.rootViewController as? UINavigationController else { return }
         
-        if UserService.shared.appWasLaunched() {
+        if UserService.shared.appWasLaunched() && !UserService.shared.userWasLoggedIn() {
             let loginVC = UIViewController.getViewController(id: LoginViewController.storyboardId)
             navController.viewControllers = [loginVC]
-        }
-
-        if  UserService.shared.userWasLoggedIn() {
+            return
+        } else if UserService.shared.userWasLoggedIn() {
             let homeVC = UIViewController.getViewController(id: HomeViewController.storyboardId)
             navController.viewControllers = [homeVC]
+            return
         }
         
     }
