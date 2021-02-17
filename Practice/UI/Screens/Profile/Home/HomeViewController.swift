@@ -23,7 +23,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     let transiton = SlideInTransition()
     lazy var menuBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Main-Menu-Bar-Button"), style: .done, target: self, action: #selector(didTapMenuButton))
-    
+    lazy var usersTableViewController = UIViewController.getViewController(id: UsersTableViewController.storyboardId) as? UsersTableViewController
     // MARK: Actions
     
     @objc private func didTapMenuButton(_ sender: Any) {
@@ -75,8 +75,11 @@ extension HomeViewController: SlidingMenuViewControllerDelegate {
     }
     
     func usersButtonTapped() {
+        guard let usersVC = usersTableViewController else {return}
         dismiss(animated: true,completion: nil)
         navigationItem.title = Constants.SlidingMenu.users.rawValue
+        self.addChild(usersVC)
+        self.view.addSubview(usersVC.view)
     }
     
     func contactsButtonTapped() {

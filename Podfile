@@ -9,4 +9,5 @@ target 'Practice' do
 
 pod 'RxSwift'
 pod 'RxCocoa'
+pod 'SwiftyJSON'
 end
