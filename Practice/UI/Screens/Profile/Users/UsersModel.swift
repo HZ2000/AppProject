@@ -8,21 +8,11 @@
 
 import Foundation
 
-class Users: Codable {
+struct Users: Decodable {
     let id: Int
     let name: String
     let username: String
     let email: String
     let phone: String
-    
-    // MARK: Init
-
-    required init(id: Int , name: String , username: String , email: String , phone: String) {
-        self.id = id
-        self.name = name
-        self.username = username
-        self.email = email
-        self.phone = phone
-    }
 }
 

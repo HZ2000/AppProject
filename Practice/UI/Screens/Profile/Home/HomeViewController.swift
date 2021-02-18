@@ -17,13 +17,15 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         navigationControllerSetup()
+        viewInitialState()
     }
     
     // MARK: Properties
     
-    let transiton = SlideInTransition()
-    lazy var menuBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Main-Menu-Bar-Button"), style: .done, target: self, action: #selector(didTapMenuButton))
-    lazy var usersTableViewController = UIViewController.getViewController(id: UsersTableViewController.storyboardId) as? UsersTableViewController
+    private let transiton = SlideInTransition()
+    private lazy var menuBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Main-Menu-Bar-Button"), style: .done, target: self, action: #selector(didTapMenuButton))
+    private lazy var usersTableViewController = UIViewController.getViewController(id: UsersTableViewController.storyboardId) as? UsersTableViewController
+    
     // MARK: Actions
     
     @objc private func didTapMenuButton(_ sender: Any) {
@@ -61,6 +63,15 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @objc private func didTapScreenEdge() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    private func viewInitialState() {
+        guard let usersVC = usersTableViewController else {return}
+        DispatchQueue.main.async {
+            self.addChild(usersVC)
+            self.view.addSubview(usersVC.view)
+            
+        }
     }
 }
 

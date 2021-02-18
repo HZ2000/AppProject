@@ -10,31 +10,26 @@ import UIKit
 
 class UsersTableViewCell: UITableViewCell {
     static let storyboardId = "UsersTableViewCell"
-
-    //MARK: Outlets
+    
+    // MARK: Outlets
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
-    // MARK: View Life Cycle
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String!) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    // MARK: Helpers
     
     public func userCellConfigure(with model: Users) {
-        usernameLabel.text = "Username: \(model.username)"
+        usernameLabel.text = "User: \(model.username)"
         emailLabel.text = "Email: \(model.email)"
     }
     
-    
-
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        if selected {
+            contentView.backgroundColor = UIColor(red: 65.0/255.0, green: 199.0/255.0, blue: 219.0/255.0, alpha: 1)
+        } else {
+            contentView.backgroundColor = UIColor.white
+        }
+    }
 }
