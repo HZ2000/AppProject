@@ -435,10 +435,10 @@
             </objects>
             <point key="canvasLocation" x="3965" y="-608"/>
         </scene>
-        <!--Users Table View Controller-->
+        <!--Users List View Controller-->
         <scene sceneID="Emy-cM-YL4">
             <objects>
-                <viewController storyboardIdentifier="UsersTableViewController" id="o5z-yS-mjy" customClass="UsersTableViewController" customModule="Practice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UsersListViewController" id="o5z-yS-mjy" customClass="UsersListViewController" customModule="Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M7w-iQ-x1g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -522,58 +522,74 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserAlbumsTableViewCell" rowHeight="223" id="F4B-5I-Tqi" customClass="UserAlbumsTableViewCell" customModule="Practice" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="223"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserAlbumsTableViewCell" rowHeight="257" id="F4B-5I-Tqi" customClass="UserAlbumsTableViewCell" customModule="Practice" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="257"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F4B-5I-Tqi" id="zAG-Ts-Hg7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="223"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="257"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7M-cy-Fi5">
-                                                    <rect key="frame" x="20" y="0.0" width="260" height="50"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7M-cy-Fi5">
+                                                    <rect key="frame" x="20" y="0.0" width="360" height="75"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="260" id="3cI-4B-35b"/>
-                                                        <constraint firstAttribute="height" constant="50" id="Mry-No-Jfn"/>
+                                                        <constraint firstAttribute="width" constant="360" id="3cI-4B-35b"/>
+                                                        <constraint firstAttribute="height" constant="75" id="Mry-No-Jfn"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NKA-qF-4Xz">
-                                                    <rect key="frame" x="20" y="51" width="374" height="150"/>
+                                                    <rect key="frame" x="20" y="71" width="374" height="200"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="150" id="yA2-G0-7Dn"/>
+                                                        <constraint firstAttribute="height" constant="200" id="yA2-G0-7Dn"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0fz-Km-mbd">
-                                                        <size key="itemSize" width="128" height="128"/>
+                                                        <size key="itemSize" width="150" height="147"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4pi-d9-xDh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserAlbumsCollectionViewCell" id="4pi-d9-xDh" customClass="UserAlbumsCollectionViewCell" customModule="Practice" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="148"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3t9-aI-ayj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="148"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AC2-Iv-nIc">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="148"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="AC2-Iv-nIc" secondAttribute="trailing" id="WJp-dJ-tUG"/>
+                                                                    <constraint firstItem="AC2-Iv-nIc" firstAttribute="top" secondItem="3t9-aI-ayj" secondAttribute="top" id="Z08-HH-qYc"/>
+                                                                    <constraint firstItem="AC2-Iv-nIc" firstAttribute="leading" secondItem="3t9-aI-ayj" secondAttribute="leading" id="Zc1-pg-FX1"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="AC2-Iv-nIc" secondAttribute="bottom" id="tJx-N1-yXZ"/>
+                                                                </constraints>
                                                             </collectionViewCellContentView>
+                                                            <size key="customSize" width="150" height="148"/>
+                                                            <connections>
+                                                                <outlet property="userPhotosImageView" destination="AC2-Iv-nIc" id="hNB-9k-jcF"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="NKA-qF-4Xz" firstAttribute="trailing" secondItem="zAG-Ts-Hg7" secondAttribute="trailingMargin" id="4X3-Q3-ShO"/>
-                                                <constraint firstItem="NKA-qF-4Xz" firstAttribute="top" secondItem="zAG-Ts-Hg7" secondAttribute="topMargin" constant="40" id="Rha-Cp-wRx"/>
+                                                <constraint firstAttribute="trailing" secondItem="v7M-cy-Fi5" secondAttribute="trailing" constant="34" id="A0r-tq-KLg"/>
+                                                <constraint firstItem="NKA-qF-4Xz" firstAttribute="top" secondItem="zAG-Ts-Hg7" secondAttribute="topMargin" constant="60" id="Rha-Cp-wRx"/>
                                                 <constraint firstItem="v7M-cy-Fi5" firstAttribute="top" secondItem="zAG-Ts-Hg7" secondAttribute="top" id="YdU-r5-MgZ"/>
                                                 <constraint firstItem="NKA-qF-4Xz" firstAttribute="leading" secondItem="zAG-Ts-Hg7" secondAttribute="leadingMargin" id="dpz-A9-3jP"/>
-                                                <constraint firstItem="NKA-qF-4Xz" firstAttribute="leading" secondItem="v7M-cy-Fi5" secondAttribute="trailing" constant="-260" id="lXD-yl-Fob"/>
                                                 <constraint firstItem="v7M-cy-Fi5" firstAttribute="leading" secondItem="zAG-Ts-Hg7" secondAttribute="leading" constant="20" id="weG-ku-dvh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="albumNameLabel" destination="v7M-cy-Fi5" id="BKM-Ex-pC6"/>
+                                            <outlet property="collectionView" destination="NKA-qF-4Xz" id="aNC-qN-RvI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -594,7 +610,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWi-iO-pIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4841" y="-1376"/>
+            <point key="canvasLocation" x="4840.579710144928" y="-1376.1160714285713"/>
         </scene>
         <!--Sliding Menu View Controller-->
         <scene sceneID="XbA-qD-kEq">

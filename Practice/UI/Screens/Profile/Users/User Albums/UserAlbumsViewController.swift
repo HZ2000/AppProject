@@ -13,7 +13,6 @@ class UserAlbumsViewController: UIViewController {
     
     // MARK: Outlets
     
-    
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: View Life Cycle
@@ -21,20 +20,20 @@ class UserAlbumsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = "Albums"
         tableViewConfigure()
+        urlJsonParsing()
     }
     
     // MARK: Properties
     
-    var userAlbums = [UserAlbums]()
+    private var userAlbums = [UserAlbums]()
     
     // MARK: Helpers
     
     private func tableViewConfigure() {
         tableView.delegate = self
         tableView.dataSource = self
-        
-        navigationController?.navigationItem.leftBarButtonItem?.tintColor = .black
     }
     
     private func urlJsonParsing() {
@@ -60,6 +59,7 @@ class UserAlbumsViewController: UIViewController {
                 }
             }
         }
+        
         task.resume()
     }
 }
@@ -68,15 +68,18 @@ class UserAlbumsViewController: UIViewController {
 
 extension UserAlbumsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userAlbums.count
+        let currentUserAlbumCount = userAlbums.filter {$0.userId == UsersListViewController.currentUser}.map {$0}
+        return currentUserAlbumCount.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UserAlbumsTableViewCell.storyboardId, for: indexPath) as? UserAlbumsTableViewCell else {return UITableViewCell()}
+        let currentUserAlbumCount = userAlbums.filter {$0.userId == UsersListViewController.currentUser}.map {$0}
+        cell.userAlbumConfigure(with: currentUserAlbumCount[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        return 300.0
     }
 }

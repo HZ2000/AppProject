@@ -24,7 +24,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private let transiton = SlideInTransition()
     private lazy var menuBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Main-Menu-Bar-Button"), style: .done, target: self, action: #selector(didTapMenuButton))
-    private lazy var usersTableViewController = UIViewController.getViewController(id: UsersTableViewController.storyboardId) as? UsersTableViewController
+    private lazy var usersTableViewController = UIViewController.getViewController(id: UsersListViewController.storyboardId) as? UsersListViewController
     
     // MARK: Actions
     

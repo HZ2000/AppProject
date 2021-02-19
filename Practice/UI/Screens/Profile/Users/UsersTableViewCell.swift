@@ -23,6 +23,9 @@ class UsersTableViewCell: UITableViewCell {
         emailLabel.text = "Email: \(model.email)"
     }
     
+    // FIX - Life Cycle
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         

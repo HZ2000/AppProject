@@ -28,12 +28,16 @@
 		55A89B0025D153B500E2633E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AFF25D153B500E2633E /* Validation.swift */; };
 		55EF025525DCEBB70052A591 /* LoginPasswordFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF025325DCEBB70052A591 /* LoginPasswordFieldViewModel.swift */; };
 		55EF025625DCEBB70052A591 /* LoginPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF025425DCEBB70052A591 /* LoginPasswordTextField.swift */; };
-		55EF025925DCEDC90052A591 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF025825DCEDC90052A591 /* UsersTableViewController.swift */; };
+		55EF025925DCEDC90052A591 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF025825DCEDC90052A591 /* UsersListViewController.swift */; };
 		55EF025B25DCF22F0052A591 /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF025A25DCF22F0052A591 /* UsersModel.swift */; };
 		55EF028225DD27C20052A591 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF028025DD27C20052A591 /* UsersTableViewCell.swift */; };
 		55EF028F25DE9E660052A591 /* UserAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF028E25DE9E660052A591 /* UserAlbumsViewController.swift */; };
 		55EF029125DE9F430052A591 /* UserAlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF029025DE9F430052A591 /* UserAlbumsTableViewCell.swift */; };
 		55EF029325DEA2EF0052A591 /* UserAlbumsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF029225DEA2EF0052A591 /* UserAlbumsModel.swift */; };
+		55EF029525DFC1C70052A591 /* UITableView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF029425DFC1C70052A591 /* UITableView + Ext.swift */; };
+		55EF029725DFCE3D0052A591 /* UserAlbumsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF029625DFCE3D0052A591 /* UserAlbumsCollectionViewCell.swift */; };
+		55EF029D25DFD08F0052A591 /* UserAlbumPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF029C25DFD08F0052A591 /* UserAlbumPhotos.swift */; };
+		55EF029F25DFE8650052A591 /* URL + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF029E25DFE8650052A591 /* URL + Ext.swift */; };
 		70772571053A33D9F606E13B /* Pods_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC5931500B896914D8E02D8 /* Pods_Practice.framework */; };
 		E51C3C6225DB935800085684 /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51C3C6125DB935800085684 /* SlideInTransition.swift */; };
 /* End PBXBuildFile section */
@@ -64,12 +68,16 @@
 		55A89AFF25D153B500E2633E /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		55EF025325DCEBB70052A591 /* LoginPasswordFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPasswordFieldViewModel.swift; sourceTree = "<group>"; };
 		55EF025425DCEBB70052A591 /* LoginPasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPasswordTextField.swift; sourceTree = "<group>"; };
-		55EF025825DCEDC90052A591 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
+		55EF025825DCEDC90052A591 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		55EF025A25DCF22F0052A591 /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 		55EF028025DD27C20052A591 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		55EF028E25DE9E660052A591 /* UserAlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumsViewController.swift; sourceTree = "<group>"; };
 		55EF029025DE9F430052A591 /* UserAlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumsTableViewCell.swift; sourceTree = "<group>"; };
 		55EF029225DEA2EF0052A591 /* UserAlbumsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumsModel.swift; sourceTree = "<group>"; };
+		55EF029425DFC1C70052A591 /* UITableView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + Ext.swift"; sourceTree = "<group>"; };
+		55EF029625DFCE3D0052A591 /* UserAlbumsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumsCollectionViewCell.swift; sourceTree = "<group>"; };
+		55EF029C25DFD08F0052A591 /* UserAlbumPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumPhotos.swift; sourceTree = "<group>"; };
+		55EF029E25DFE8650052A591 /* URL + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL + Ext.swift"; sourceTree = "<group>"; };
 		DAC49464E434FC27D76986D8 /* Pods-Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice.debug.xcconfig"; path = "Target Support Files/Pods-Practice/Pods-Practice.debug.xcconfig"; sourceTree = "<group>"; };
 		E51C3C6125DB935800085684 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,8 +147,8 @@
 		55A89AD825C93D0B00E2633E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				55A89AF125CD7ED600E2633E /* TextFields */,
 				55A89ADF25CAD7F400E2633E /* Screens */,
+				55A89AF125CD7ED600E2633E /* TextFields */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -184,8 +192,10 @@
 		55A89AE325CADC7800E2633E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				55EF029E25DFE8650052A591 /* URL + Ext.swift */,
 				55A89AE425CADC9600E2633E /* UIViewController + Ext.swift */,
 				55757B4925D2A43B00325F71 /* UITextField + Ext.swift */,
+				55EF029425DFC1C70052A591 /* UITableView + Ext.swift */,
 				55757B4B25D2A46E00325F71 /* String Ext.swift */,
 				55757B4D25D2A48C00325F71 /* UIControl + Ext.swift */,
 				55A89AE625CADCF300E2633E /* Constants.swift */,
@@ -235,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				55EF028B25DE987C0052A591 /* User Albums */,
-				55EF025825DCEDC90052A591 /* UsersTableViewController.swift */,
 				55EF028025DD27C20052A591 /* UsersTableViewCell.swift */,
 				55EF025A25DCF22F0052A591 /* UsersModel.swift */,
 			);
@@ -245,11 +254,22 @@
 		55EF028B25DE987C0052A591 /* User Albums */ = {
 			isa = PBXGroup;
 			children = (
+				55EF029925DFD0110052A591 /* User Album Models */,
+				55EF025825DCEDC90052A591 /* UsersListViewController.swift */,
 				55EF028E25DE9E660052A591 /* UserAlbumsViewController.swift */,
 				55EF029025DE9F430052A591 /* UserAlbumsTableViewCell.swift */,
-				55EF029225DEA2EF0052A591 /* UserAlbumsModel.swift */,
+				55EF029625DFCE3D0052A591 /* UserAlbumsCollectionViewCell.swift */,
 			);
 			path = "User Albums";
+			sourceTree = "<group>";
+		};
+		55EF029925DFD0110052A591 /* User Album Models */ = {
+			isa = PBXGroup;
+			children = (
+				55EF029225DEA2EF0052A591 /* UserAlbumsModel.swift */,
+				55EF029C25DFD08F0052A591 /* UserAlbumPhotos.swift */,
+			);
+			path = "User Album Models";
 			sourceTree = "<group>";
 		};
 		6271A558BC72ABC78665BF60 /* Pods */ = {
@@ -394,8 +414,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A89AED25CBD0B600E2633E /* UserService.swift in Sources */,
+				55EF029D25DFD08F0052A591 /* UserAlbumPhotos.swift in Sources */,
 				55A89ADE25CABECE00E2633E /* LoginViewController.swift in Sources */,
 				55A89B0025D153B500E2633E /* Validation.swift in Sources */,
+				55EF029525DFC1C70052A591 /* UITableView + Ext.swift in Sources */,
+				55EF029725DFCE3D0052A591 /* UserAlbumsCollectionViewCell.swift in Sources */,
 				55A89AD425C9212000E2633E /* PageViewController.swift in Sources */,
 				55757B4A25D2A43B00325F71 /* UITextField + Ext.swift in Sources */,
 				55757B4625D2725C00325F71 /* HomeViewController.swift in Sources */,
@@ -408,6 +431,7 @@
 				55EF028F25DE9E660052A591 /* UserAlbumsViewController.swift in Sources */,
 				55A89AF025CD752800E2633E /* LoginViewModel.swift in Sources */,
 				55EF029125DE9F430052A591 /* UserAlbumsTableViewCell.swift in Sources */,
+				55EF029F25DFE8650052A591 /* URL + Ext.swift in Sources */,
 				55A89AE525CADC9600E2633E /* UIViewController + Ext.swift in Sources */,
 				55EF029325DEA2EF0052A591 /* UserAlbumsModel.swift in Sources */,
 				55EF025B25DCF22F0052A591 /* UsersModel.swift in Sources */,
@@ -416,7 +440,7 @@
 				55757B3C25D15DA900325F71 /* LoginEmailTextField.swift in Sources */,
 				55A89AE725CADCF300E2633E /* Constants.swift in Sources */,
 				55757B4C25D2A46E00325F71 /* String Ext.swift in Sources */,
-				55EF025925DCEDC90052A591 /* UsersTableViewController.swift in Sources */,
+				55EF025925DCEDC90052A591 /* UsersListViewController.swift in Sources */,
 				55EF025625DCEBB70052A591 /* LoginPasswordTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

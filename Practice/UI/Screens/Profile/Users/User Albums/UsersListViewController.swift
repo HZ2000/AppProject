@@ -1,5 +1,5 @@
 //
-//  UsersTableViewController.swift
+//  UsersListViewController.swift
 //  Practice
 //
 //  Created by Cypress on 2/17/21.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class UsersTableViewController: UIViewController {
-    static let storyboardId = "UsersTableViewController"
+class UsersListViewController: UIViewController {
+    static let storyboardId = "UsersListViewController"
     
     // MARK: Outlets
     
@@ -24,10 +24,18 @@ class UsersTableViewController: UIViewController {
         tableViewConfigure()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tableView.deselectSelectedRow(animated: true)
+    }
+    
     // MARK: Properties
     
-    var users = [Users]()
-    lazy var userAlbumsViewController = UIViewController.getViewController(id: UserAlbumsViewController.storyboardId) as? UserAlbumsViewController
+    private var users = [Users]()
+    private lazy var userAlbumsViewController = UIViewController.getViewController(id: UserAlbumsViewController.storyboardId) as? UserAlbumsViewController
+    static var currentUser: Int = 0
+    
     // MARK:  Helpers
     
     private func tableViewConfigure() {
@@ -64,7 +72,7 @@ class UsersTableViewController: UIViewController {
 
 // MARK: UITableViewDelegate, UITableViewDataSource
 
-extension UsersTableViewController: UITableViewDelegate , UITableViewDataSource {
+extension UsersListViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
@@ -81,6 +89,8 @@ extension UsersTableViewController: UITableViewDelegate , UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let userAlbumsVC = userAlbumsViewController else {return}
+        UsersListViewController.currentUser = indexPath.row + 1
+        print("The current user is : \(UsersListViewController.currentUser)")
         navigationController?.pushViewController(userAlbumsVC, animated: true)
     }
 }

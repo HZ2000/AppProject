@@ -10,4 +10,5 @@ target 'Practice' do
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'SwiftyJSON'
+pod 'SDWebImage'
 end
