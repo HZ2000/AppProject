@@ -26,20 +26,24 @@
 		55A89AF025CD752800E2633E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AEF25CD752800E2633E /* LoginViewModel.swift */; };
 		55A89AF625CD7F3000E2633E /* LoginEmailFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AF525CD7F3000E2633E /* LoginEmailFieldViewModel.swift */; };
 		55A89B0025D153B500E2633E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A89AFF25D153B500E2633E /* Validation.swift */; };
-		55EF025525DCEBB70052A591 /* LoginPasswordFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF025325DCEBB70052A591 /* LoginPasswordFieldViewModel.swift */; };
-		55EF025625DCEBB70052A591 /* LoginPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF025425DCEBB70052A591 /* LoginPasswordTextField.swift */; };
 		55EF025925DCEDC90052A591 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF025825DCEDC90052A591 /* UsersListViewController.swift */; };
-		55EF025B25DCF22F0052A591 /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF025A25DCF22F0052A591 /* UsersModel.swift */; };
 		55EF028225DD27C20052A591 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF028025DD27C20052A591 /* UsersTableViewCell.swift */; };
 		55EF028F25DE9E660052A591 /* UserAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF028E25DE9E660052A591 /* UserAlbumsViewController.swift */; };
 		55EF029125DE9F430052A591 /* UserAlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF029025DE9F430052A591 /* UserAlbumsTableViewCell.swift */; };
-		55EF029325DEA2EF0052A591 /* UserAlbumsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF029225DEA2EF0052A591 /* UserAlbumsModel.swift */; };
 		55EF029525DFC1C70052A591 /* UITableView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF029425DFC1C70052A591 /* UITableView + Ext.swift */; };
 		55EF029725DFCE3D0052A591 /* UserAlbumsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF029625DFCE3D0052A591 /* UserAlbumsCollectionViewCell.swift */; };
-		55EF029D25DFD08F0052A591 /* UserAlbumPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF029C25DFD08F0052A591 /* UserAlbumPhotos.swift */; };
 		55EF029F25DFE8650052A591 /* URL + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF029E25DFE8650052A591 /* URL + Ext.swift */; };
 		70772571053A33D9F606E13B /* Pods_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC5931500B896914D8E02D8 /* Pods_Practice.framework */; };
+		E50544E525E250280060315D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50544E425E250280060315D /* User.swift */; };
+		E50544EA25E2508C0060315D /* UserAlbumPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50544E925E2508C0060315D /* UserAlbumPhoto.swift */; };
+		E50544EF25E250C10060315D /* UserAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50544EE25E250C10060315D /* UserAlbum.swift */; };
 		E51C3C6225DB935800085684 /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51C3C6125DB935800085684 /* SlideInTransition.swift */; };
+		E51E4E9525E25F5100F3C5D1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51E4E9425E25F5000F3C5D1 /* NetworkService.swift */; };
+		E51E4E9925E26B2700F3C5D1 /* UsersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51E4E9825E26B2700F3C5D1 /* UsersListViewModel.swift */; };
+		E51E4EA125E26ED200F3C5D1 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51E4EA025E26ED200F3C5D1 /* NetworkServiceProtocol.swift */; };
+		E51E4EA425E2713B00F3C5D1 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51E4EA325E2713B00F3C5D1 /* UsersViewModel.swift */; };
+		E5CB7E2925E01F3F00EB3742 /* LoginPasswordFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CB7E2725E01F3F00EB3742 /* LoginPasswordFieldViewModel.swift */; };
+		E5CB7E2A25E01F3F00EB3742 /* LoginPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CB7E2825E01F3F00EB3742 /* LoginPasswordTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,20 +70,24 @@
 		55A89AEF25CD752800E2633E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		55A89AF525CD7F3000E2633E /* LoginEmailFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailFieldViewModel.swift; sourceTree = "<group>"; };
 		55A89AFF25D153B500E2633E /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		55EF025325DCEBB70052A591 /* LoginPasswordFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPasswordFieldViewModel.swift; sourceTree = "<group>"; };
-		55EF025425DCEBB70052A591 /* LoginPasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPasswordTextField.swift; sourceTree = "<group>"; };
 		55EF025825DCEDC90052A591 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
-		55EF025A25DCF22F0052A591 /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 		55EF028025DD27C20052A591 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		55EF028E25DE9E660052A591 /* UserAlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumsViewController.swift; sourceTree = "<group>"; };
 		55EF029025DE9F430052A591 /* UserAlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumsTableViewCell.swift; sourceTree = "<group>"; };
-		55EF029225DEA2EF0052A591 /* UserAlbumsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumsModel.swift; sourceTree = "<group>"; };
 		55EF029425DFC1C70052A591 /* UITableView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + Ext.swift"; sourceTree = "<group>"; };
 		55EF029625DFCE3D0052A591 /* UserAlbumsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumsCollectionViewCell.swift; sourceTree = "<group>"; };
-		55EF029C25DFD08F0052A591 /* UserAlbumPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumPhotos.swift; sourceTree = "<group>"; };
 		55EF029E25DFE8650052A591 /* URL + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL + Ext.swift"; sourceTree = "<group>"; };
 		DAC49464E434FC27D76986D8 /* Pods-Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice.debug.xcconfig"; path = "Target Support Files/Pods-Practice/Pods-Practice.debug.xcconfig"; sourceTree = "<group>"; };
+		E50544E425E250280060315D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E50544E925E2508C0060315D /* UserAlbumPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumPhoto.swift; sourceTree = "<group>"; };
+		E50544EE25E250C10060315D /* UserAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbum.swift; sourceTree = "<group>"; };
 		E51C3C6125DB935800085684 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
+		E51E4E9425E25F5000F3C5D1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E51E4E9825E26B2700F3C5D1 /* UsersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewModel.swift; sourceTree = "<group>"; };
+		E51E4EA025E26ED200F3C5D1 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		E51E4EA325E2713B00F3C5D1 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		E5CB7E2725E01F3F00EB3742 /* LoginPasswordFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPasswordFieldViewModel.swift; sourceTree = "<group>"; };
+		E5CB7E2825E01F3F00EB3742 /* LoginPasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPasswordTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,7 @@
 		55A89ABC25C85E5F00E2633E /* Practice */ = {
 			isa = PBXGroup;
 			children = (
+				E50544E225E24FB50060315D /* Models */,
 				55A89AD825C93D0B00E2633E /* UI */,
 				55A89AEB25CBD0A700E2633E /* Services */,
 				55A89AE325CADC7800E2633E /* Helpers */,
@@ -209,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				55A89AEC25CBD0B600E2633E /* UserService.swift */,
+				E51E4E9425E25F5000F3C5D1 /* NetworkService.swift */,
+				E51E4EA025E26ED200F3C5D1 /* NetworkServiceProtocol.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -216,7 +227,7 @@
 		55A89AF125CD7ED600E2633E /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
-				55EF025225DCEBB70052A591 /* PasswordTextField */,
+				E5CB7E2625E01F3F00EB3742 /* PasswordTextField */,
 				55A89AF225CD7EDE00E2633E /* LoginEmail */,
 			);
 			path = TextFields;
@@ -231,22 +242,11 @@
 			path = LoginEmail;
 			sourceTree = "<group>";
 		};
-		55EF025225DCEBB70052A591 /* PasswordTextField */ = {
-			isa = PBXGroup;
-			children = (
-				55EF025325DCEBB70052A591 /* LoginPasswordFieldViewModel.swift */,
-				55EF025425DCEBB70052A591 /* LoginPasswordTextField.swift */,
-			);
-			name = PasswordTextField;
-			path = "../../../../../../Downloads/Practice-2/PasswordTextField";
-			sourceTree = "<group>";
-		};
 		55EF025725DCED930052A591 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				E51E4E9725E26AF600F3C5D1 /* UsersList */,
 				55EF028B25DE987C0052A591 /* User Albums */,
-				55EF028025DD27C20052A591 /* UsersTableViewCell.swift */,
-				55EF025A25DCF22F0052A591 /* UsersModel.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -254,22 +254,11 @@
 		55EF028B25DE987C0052A591 /* User Albums */ = {
 			isa = PBXGroup;
 			children = (
-				55EF029925DFD0110052A591 /* User Album Models */,
-				55EF025825DCEDC90052A591 /* UsersListViewController.swift */,
 				55EF028E25DE9E660052A591 /* UserAlbumsViewController.swift */,
 				55EF029025DE9F430052A591 /* UserAlbumsTableViewCell.swift */,
 				55EF029625DFCE3D0052A591 /* UserAlbumsCollectionViewCell.swift */,
 			);
 			path = "User Albums";
-			sourceTree = "<group>";
-		};
-		55EF029925DFD0110052A591 /* User Album Models */ = {
-			isa = PBXGroup;
-			children = (
-				55EF029225DEA2EF0052A591 /* UserAlbumsModel.swift */,
-				55EF029C25DFD08F0052A591 /* UserAlbumPhotos.swift */,
-			);
-			path = "User Album Models";
 			sourceTree = "<group>";
 		};
 		6271A558BC72ABC78665BF60 /* Pods */ = {
@@ -289,6 +278,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E50544E225E24FB50060315D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E50544E425E250280060315D /* User.swift */,
+				E50544E925E2508C0060315D /* UserAlbumPhoto.swift */,
+				E50544EE25E250C10060315D /* UserAlbum.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E51C3C6A25DC001D00085684 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +295,27 @@
 				55757B4425D2724B00325F71 /* Home */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		E51E4E9725E26AF600F3C5D1 /* UsersList */ = {
+			isa = PBXGroup;
+			children = (
+				55EF025825DCEDC90052A591 /* UsersListViewController.swift */,
+				55EF028025DD27C20052A591 /* UsersTableViewCell.swift */,
+				E51E4E9825E26B2700F3C5D1 /* UsersListViewModel.swift */,
+				E51E4EA325E2713B00F3C5D1 /* UsersViewModel.swift */,
+			);
+			path = UsersList;
+			sourceTree = "<group>";
+		};
+		E5CB7E2625E01F3F00EB3742 /* PasswordTextField */ = {
+			isa = PBXGroup;
+			children = (
+				E5CB7E2725E01F3F00EB3742 /* LoginPasswordFieldViewModel.swift */,
+				E5CB7E2825E01F3F00EB3742 /* LoginPasswordTextField.swift */,
+			);
+			name = PasswordTextField;
+			path = ../../../../../Downloads/AppProject/PasswordTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,35 +433,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E50544EA25E2508C0060315D /* UserAlbumPhoto.swift in Sources */,
 				55A89AED25CBD0B600E2633E /* UserService.swift in Sources */,
-				55EF029D25DFD08F0052A591 /* UserAlbumPhotos.swift in Sources */,
 				55A89ADE25CABECE00E2633E /* LoginViewController.swift in Sources */,
 				55A89B0025D153B500E2633E /* Validation.swift in Sources */,
+				E51E4EA125E26ED200F3C5D1 /* NetworkServiceProtocol.swift in Sources */,
 				55EF029525DFC1C70052A591 /* UITableView + Ext.swift in Sources */,
 				55EF029725DFCE3D0052A591 /* UserAlbumsCollectionViewCell.swift in Sources */,
 				55A89AD425C9212000E2633E /* PageViewController.swift in Sources */,
 				55757B4A25D2A43B00325F71 /* UITextField + Ext.swift in Sources */,
+				E50544E525E250280060315D /* User.swift in Sources */,
+				E5CB7E2925E01F3F00EB3742 /* LoginPasswordFieldViewModel.swift in Sources */,
+				E51E4E9525E25F5100F3C5D1 /* NetworkService.swift in Sources */,
+				E50544EF25E250C10060315D /* UserAlbum.swift in Sources */,
 				55757B4625D2725C00325F71 /* HomeViewController.swift in Sources */,
-				55EF025525DCEBB70052A591 /* LoginPasswordFieldViewModel.swift in Sources */,
 				55757B4E25D2A48C00325F71 /* UIControl + Ext.swift in Sources */,
 				55757B5025D2C7E400325F71 /* SlidingMenuViewController.swift in Sources */,
 				E51C3C6225DB935800085684 /* SlideInTransition.swift in Sources */,
+				E5CB7E2A25E01F3F00EB3742 /* LoginPasswordTextField.swift in Sources */,
+				E51E4E9925E26B2700F3C5D1 /* UsersListViewModel.swift in Sources */,
 				55EF028225DD27C20052A591 /* UsersTableViewCell.swift in Sources */,
 				55A89ABE25C85E5F00E2633E /* AppDelegate.swift in Sources */,
 				55EF028F25DE9E660052A591 /* UserAlbumsViewController.swift in Sources */,
+				E51E4EA425E2713B00F3C5D1 /* UsersViewModel.swift in Sources */,
 				55A89AF025CD752800E2633E /* LoginViewModel.swift in Sources */,
 				55EF029125DE9F430052A591 /* UserAlbumsTableViewCell.swift in Sources */,
 				55EF029F25DFE8650052A591 /* URL + Ext.swift in Sources */,
 				55A89AE525CADC9600E2633E /* UIViewController + Ext.swift in Sources */,
-				55EF029325DEA2EF0052A591 /* UserAlbumsModel.swift in Sources */,
-				55EF025B25DCF22F0052A591 /* UsersModel.swift in Sources */,
 				55A89AF625CD7F3000E2633E /* LoginEmailFieldViewModel.swift in Sources */,
 				55A89ADC25C99A1D00E2633E /* FourthHintViewController.swift in Sources */,
 				55757B3C25D15DA900325F71 /* LoginEmailTextField.swift in Sources */,
 				55A89AE725CADCF300E2633E /* Constants.swift in Sources */,
 				55757B4C25D2A46E00325F71 /* String Ext.swift in Sources */,
 				55EF025925DCEDC90052A591 /* UsersListViewController.swift in Sources */,
-				55EF025625DCEBB70052A591 /* LoginPasswordTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

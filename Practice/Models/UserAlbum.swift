@@ -1,5 +1,5 @@
 //
-//  UserAlbumsModel.swift
+//  UserAlbum.swift
 //  Practice
 //
 //  Created by Cypress on 2/18/21.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserAlbums: Decodable {
+struct UserAlbum: Decodable {
     let userId: Int
     let id: Int
     let title: String

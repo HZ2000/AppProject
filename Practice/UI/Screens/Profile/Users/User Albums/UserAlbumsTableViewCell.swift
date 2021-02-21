@@ -27,11 +27,11 @@ class UserAlbumsTableViewCell: UITableViewCell {
     
     // MARK: Properties
     
-    private var userAlbumPhotos = [UserAlbumPhotos]()
+    private var userAlbumPhotos = [UserAlbumPhoto]()
     
     // MARK: Helpers
     
-    public func userAlbumConfigure(with model: UserAlbums) {
+    public func userAlbumConfigure(with model: UserAlbum) {
         albumNameLabel.text = model.title
     }
     
@@ -59,7 +59,7 @@ class UserAlbumsTableViewCell: UITableViewCell {
             
             DispatchQueue.main.async {
                 do {
-                    self?.userAlbumPhotos = try decoder.decode([UserAlbumPhotos].self, from: dataResponse)
+                    self?.userAlbumPhotos = try decoder.decode([UserAlbumPhoto].self, from: dataResponse)
                 } catch {
                     print("Couldn't do the parsing")
                 }

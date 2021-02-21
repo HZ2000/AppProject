@@ -1,5 +1,5 @@
 //
-//  UserAlbumPhotos.swift
+//  UserAlbumPhoto.swift
 //  Practice
 //
 //  Created by Cypress on 2/19/21.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserAlbumPhotos: Decodable {
+struct UserAlbumPhoto: Decodable {
     let albumId: Int
     let id: Int
     let title: String

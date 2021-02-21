@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class UsersListViewController: UIViewController {
     static let storyboardId = "UsersListViewController"
@@ -20,8 +22,9 @@ class UsersListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        urlJsonParsing()
         tableViewConfigure()
+        setupViewModel()
+        setupViewModelBinding()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +35,8 @@ class UsersListViewController: UIViewController {
     
     // MARK: Properties
     
-    private var users = [Users]()
+    private var viewModel: UsersListViewModel?
+    let bag = DisposeBag()
     private lazy var userAlbumsViewController = UIViewController.getViewController(id: UserAlbumsViewController.storyboardId) as? UserAlbumsViewController
     static var currentUser: Int = 0
     
@@ -43,30 +47,14 @@ class UsersListViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    private func urlJsonParsing() {
-        let urlString = "https://jsonplaceholder.typicode.com/users"
-        guard let url = URL(string: urlString) else {return}
-        
-        let session = URLSession.shared
-        let decoder = JSONDecoder()
-        
-        let task = session.dataTask(with: url) {[weak self] (data, response, error) in
-            guard let dataResponse = data,
-                error == nil else {
-                    print(error?.localizedDescription ?? "Response Error")
-                    return
-            }
+    private func setupViewModel() {
+        viewModel = UsersListViewModel()
+    }
+    
+    private func setupViewModelBinding() {
+        viewModel?.fetchUsersViewModel().bind(to: tableView.rx.items(cellIdentifier: UsersTableViewCell.storyboardId)) { index,viewModel,cell in
             
-            DispatchQueue.main.async {
-                do {
-                    self?.users = try decoder.decode([Users].self, from: dataResponse)
-                    self?.tableView.reloadData()
-                } catch {
-                    print("Couldn't do the parsing")
-                }
-            }
         }
-        task.resume()
     }
 }
 
@@ -74,12 +62,12 @@ class UsersListViewController: UIViewController {
 
 extension UsersListViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        //return viewModel?.fetchUsers().count ?? 0
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UsersTableViewCell.storyboardId, for: indexPath) as? UsersTableViewCell else {return UITableViewCell()}
-        cell.userCellConfigure(with: users[indexPath.row])
         return cell
     }
     

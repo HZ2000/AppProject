@@ -43,5 +43,4 @@ class UserService {
          defaults.set(false, forKey: Constants.UserDefaultsKey.userIsLogged.rawValue)
          defaults.synchronize()
      }
-
 }

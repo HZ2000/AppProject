@@ -25,7 +25,7 @@ class UserAlbumsCollectionViewCell: UICollectionViewCell {
     
     // MARK: Helpers
     
-    public func configureAlbumPictures(with model: UserAlbumPhotos) {
+    public func configureAlbumPictures(with model: UserAlbumPhoto) {
         guard let photoUrl = URL(string: model.url),
             let placeholderUrl = URL(string: model.thumbnailUrl) else {return}
         do {

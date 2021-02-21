@@ -18,7 +18,7 @@ class UsersTableViewCell: UITableViewCell {
     
     // MARK: Helpers
     
-    public func userCellConfigure(with model: Users) {
+    public func userCellConfigure(with model: User) {
         usernameLabel.text = "User: \(model.username)"
         emailLabel.text = "Email: \(model.email)"
     }

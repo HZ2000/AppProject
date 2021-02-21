@@ -27,7 +27,7 @@ class UserAlbumsViewController: UIViewController {
     
     // MARK: Properties
     
-    private var userAlbums = [UserAlbums]()
+    private var userAlbums = [UserAlbum]()
     
     // MARK: Helpers
     
@@ -52,7 +52,7 @@ class UserAlbumsViewController: UIViewController {
             
             DispatchQueue.main.async {
                 do {
-                    self?.userAlbums = try decoder.decode([UserAlbums].self, from: dataResponse)
+                    self?.userAlbums = try decoder.decode([UserAlbum].self, from: dataResponse)
                     self?.tableView.reloadData()
                 } catch {
                     print("Couldn't do the parsing")

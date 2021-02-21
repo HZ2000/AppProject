@@ -1,5 +1,5 @@
 //
-//  Users.swift
+//  User.swift
 //  Practice
 //
 //  Created by Cypress on 2/17/21.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Users: Decodable {
+struct User: Decodable {
     let id: Int
     let name: String
     let username: String

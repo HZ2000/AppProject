@@ -61,7 +61,7 @@ class LoginViewController: UIViewController {
         
         viewModel
             .emailErrorDescript
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .bind(to: emailErrorLabel.rx.text)
             .disposed(by: disposeBag)
         
@@ -70,13 +70,13 @@ class LoginViewController: UIViewController {
             .map { (strOptional) -> Bool in
                 return (strOptional == nil)
             }
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .bind(to: emailErrorImageView.rx.isHidden)
             .disposed(by: disposeBag)
         
         viewModel
             .passwordErrorDescript
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .bind(to: passwordErrorLabel.rx.text)
             .disposed(by: disposeBag)
         
@@ -85,7 +85,7 @@ class LoginViewController: UIViewController {
             .map { (strOptional) -> Bool in
                 return (strOptional == nil)
             }
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .bind(to: passwordErrorImageView.rx.isHidden)
             .disposed(by: disposeBag)
         
