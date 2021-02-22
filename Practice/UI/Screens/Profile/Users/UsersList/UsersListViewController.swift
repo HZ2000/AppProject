@@ -22,6 +22,7 @@ class UsersListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = viewModel?.title
         tableViewConfigure()
         setupViewModel()
         setupViewModelBinding()
@@ -36,15 +37,14 @@ class UsersListViewController: UIViewController {
     // MARK: Properties
     
     private var viewModel: UsersListViewModel?
-    let bag = DisposeBag()
+    private let bag = DisposeBag()
     private lazy var userAlbumsViewController = UIViewController.getViewController(id: UserAlbumsViewController.storyboardId) as? UserAlbumsViewController
     static var currentUser: Int = 0
     
     // MARK:  Helpers
     
     private func tableViewConfigure() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.rx.setDelegate(self).disposed(by: bag)
     }
     
     private func setupViewModel() {
@@ -52,24 +52,18 @@ class UsersListViewController: UIViewController {
     }
     
     private func setupViewModelBinding() {
-        viewModel?.fetchUsersViewModel().bind(to: tableView.rx.items(cellIdentifier: UsersTableViewCell.storyboardId)) { index,viewModel,cell in
-            
-        }
+        guard let modelUsers = viewModel?.users else {return}
+        modelUsers
+            .observeOn(MainScheduler.instance)
+            .bind(to: tableView.rx.items(cellIdentifier: "UsersTableViewCell", cellType: UsersTableViewCell.self)) { (row,item,cell) in
+            cell.userCellConfigure(with: item)
+        }.disposed(by: bag)
     }
 }
 
-// MARK: UITableViewDelegate, UITableViewDataSource
+// MARK: UITableViewDelegate
 
-extension UsersListViewController: UITableViewDelegate , UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return viewModel?.fetchUsers().count ?? 0
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: UsersTableViewCell.storyboardId, for: indexPath) as? UsersTableViewCell else {return UITableViewCell()}
-        return cell
-    }
+extension UsersListViewController: UITableViewDelegate  {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0

@@ -39,8 +39,6 @@ class UserAlbumsTableViewCell: UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-     
-    // FIX - Create NETWWORK LAYER
     
     private func urlJsonParsing() {
         let urlString = "https://jsonplaceholder.typicode.com/photos"

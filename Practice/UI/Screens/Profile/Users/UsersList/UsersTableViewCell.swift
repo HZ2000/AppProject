@@ -16,23 +16,26 @@ class UsersTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
-    // MARK: Helpers
-    
-    public func userCellConfigure(with model: User) {
-        usernameLabel.text = "User: \(model.username)"
-        emailLabel.text = "Email: \(model.email)"
-    }
-    
-    // FIX - Life Cycle
-    
+    // MARK: View Life Cycle
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         if selected {
-            contentView.backgroundColor = UIColor(red: 65.0/255.0, green: 199.0/255.0, blue: 219.0/255.0, alpha: 1)
+            if #available(iOS 13.0, *) {
+                contentView.backgroundColor = .systemGray4
+            } else {
+                // Fallback on earlier versions
+            }
         } else {
             contentView.backgroundColor = UIColor.white
         }
+    }
+    
+    // MARK: Helpers
+    
+    public func userCellConfigure(with model: User) {
+        usernameLabel.text = "User: \(model.username)"
+        emailLabel.text = "Email: \(model.email)"
     }
 }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class UserAlbumsViewController: UIViewController {
     static let storyboardId = "UserAlbumsViewController"
@@ -20,65 +22,40 @@ class UserAlbumsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Albums"
+        navigationItem.title = viewModel?.title
         tableViewConfigure()
-        urlJsonParsing()
+        setupViewModel()
+        setupViewModelBinding()
     }
     
     // MARK: Properties
     
-    private var userAlbums = [UserAlbum]()
+    private var viewModel: UserAlbumsViewModel?
+    private let bag = DisposeBag()
     
     // MARK: Helpers
     
     private func tableViewConfigure() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.rx.setDelegate(self).disposed(by: bag)
     }
     
-    private func urlJsonParsing() {
-        let urlString = "https://jsonplaceholder.typicode.com/albums"
-        guard let url = URL(string: urlString) else {return}
-        
-        let session = URLSession.shared
-        let decoder = JSONDecoder()
-        
-        let task = session.dataTask(with: url) {[weak self] (data, response, error) in
-            guard let dataResponse = data,
-                error == nil else {
-                    print(error?.localizedDescription ?? "Response Error")
-                    return
-            }
-            
-            DispatchQueue.main.async {
-                do {
-                    self?.userAlbums = try decoder.decode([UserAlbum].self, from: dataResponse)
-                    self?.tableView.reloadData()
-                } catch {
-                    print("Couldn't do the parsing")
-                }
-            }
-        }
-        
-        task.resume()
+    private func setupViewModel() {
+        viewModel = UserAlbumsViewModel()
+    }
+    
+    private func setupViewModelBinding() {
+        guard let modelUsers = viewModel?.userAlbums else {return}
+        modelUsers
+            .observeOn(MainScheduler.instance)
+            .bind(to: tableView.rx.items(cellIdentifier: "UserAlbumsTableViewCell", cellType: UserAlbumsTableViewCell.self)) { (row,item,cell) in
+            cell.userAlbumConfigure(with: item)
+        }.disposed(by: bag)
     }
 }
 
-// MARK: UITableViewDelegate, UITableViewDataSource
+// MARK: UITableViewDelegate
 
-extension UserAlbumsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let currentUserAlbumCount = userAlbums.filter {$0.userId == UsersListViewController.currentUser}.map {$0}
-        return currentUserAlbumCount.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserAlbumsTableViewCell.storyboardId, for: indexPath) as? UserAlbumsTableViewCell else {return UITableViewCell()}
-        let currentUserAlbumCount = userAlbums.filter {$0.userId == UsersListViewController.currentUser}.map {$0}
-        cell.userAlbumConfigure(with: currentUserAlbumCount[indexPath.row])
-        return cell
-    }
-    
+extension UserAlbumsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300.0
     }
