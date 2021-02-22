@@ -9,31 +9,19 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Alamofire
 
 class NetworkService {
     
     static let shared = NetworkService()
     
-    func getDataFromURL<Model: Decodable>(url: String , from model: Model.Type , completionHandler: @escaping (Result<Model,Error>) -> Void ) {
-             guard let url = URL(string: url) else {return}
-             
-             let session = URLSession.shared
-             let decoder = JSONDecoder()
-             
-             let task = session.dataTask(with: url) { (data, response, error) in
-                guard let dataResponse = data,
-                    error == nil else {
-                        completionHandler(.failure(error!))
-                        return
-                }
-                
-                do {
-                    let data = try decoder.decode(model.self, from: dataResponse)
-                    completionHandler(.success(data))
-                } catch {
-                    completionHandler(.failure(error))
-                }
-        }
-        task.resume()
+    func getDataFromURL<Model: Decodable>(url: String , from model: [Model].Type , completionHandler: @escaping (Result<[Model],Error>) -> Void ) {
+        AF.request(url)
+            .validate()
+            .responseDecodable(of: model.self) { (response) in
+                guard let data = response.value else {return}
+                completionHandler(.success(data))
+            }
     }
 }
+

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class UserAlbumsTableViewCell: UITableViewCell {
     static let storyboardId = "UserAlbumsTableViewCell"
@@ -22,65 +24,41 @@ class UserAlbumsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         collectionViewConfigure()
-        urlJsonParsing()
+        setupViewModel()
+        setupViewModelBinding()
     }
     
     // MARK: Properties
     
-    private var userAlbumPhotos = [UserAlbumPhoto]()
+    private var viewModel: UserAlbumPhotosListViewModel?
+    private let bag = DisposeBag()
     
     // MARK: Helpers
+    
+    private func collectionViewConfigure() {
+        collectionView.rx.setDelegate(self).disposed(by: bag)
+    }
     
     public func userAlbumConfigure(with model: UserAlbum) {
         albumNameLabel.text = model.title
     }
     
-    private func collectionViewConfigure() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
+    private func setupViewModel() {
+        viewModel = UserAlbumPhotosListViewModel()
     }
     
-    private func urlJsonParsing() {
-        let urlString = "https://jsonplaceholder.typicode.com/photos"
-        
-        guard let url = URL(string: urlString) else {return}
-        
-        let session = URLSession.shared
-        let decoder = JSONDecoder()
-        
-        let task = session.dataTask(with: url) {[weak self] (data, response, error) in
-            guard let dataResponse = data,
-                error == nil else {
-                    print(error?.localizedDescription ?? "Response Error")
-                    return
-            }
-            
-            DispatchQueue.main.async {
-                do {
-                    self?.userAlbumPhotos = try decoder.decode([UserAlbumPhoto].self, from: dataResponse)
-                } catch {
-                    print("Couldn't do the parsing")
-                }
-            }
-        }
-        
-        task.resume()
+    private func setupViewModelBinding() {
+        guard let modelUserPhotos = viewModel?.userAlbumPhotos else {return}
+        modelUserPhotos
+            .observeOn(MainScheduler.instance)
+            .bind(to: collectionView.rx.items(cellIdentifier: "UserAlbumsCollectionViewCell", cellType: UserAlbumsCollectionViewCell.self)) { (row,item,cell) in
+            cell.configureAlbumPictures(with: item)
+        }.disposed(by: bag)
     }
 }
 
-// MARK: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+// MARK: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 
-extension UserAlbumsTableViewCell: UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let currentUserAlbumPhoto = userAlbumPhotos.filter { $0.albumId == UsersListViewController.currentUser }.map {$0}
-        print("Current Photos : \(currentUserAlbumPhoto.count)")
-        return currentUserAlbumPhoto.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserAlbumsCollectionViewCell.storyboardId, for: indexPath) as? UserAlbumsCollectionViewCell else {return UICollectionViewCell()}
-        let currentUserAlbumPhoto = userAlbumPhotos.filter { $0.albumId == UsersListViewController.currentUser }.map {$0}
-        cell.configureAlbumPictures(with: currentUserAlbumPhoto[indexPath.row])
-        return cell
-    }
+extension UserAlbumsTableViewCell: UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
+  
 }

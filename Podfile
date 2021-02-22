@@ -11,4 +11,5 @@ pod 'RxSwift'
 pod 'RxCocoa'
 pod 'SwiftyJSON'
 pod 'SDWebImage'
+pod 'Alamofire' 
 end

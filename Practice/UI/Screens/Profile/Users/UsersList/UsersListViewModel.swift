@@ -9,21 +9,32 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Alamofire
 
 class UsersListViewModel {
     let title = "Users"
     
+    // MARK: Init
+    
+    init() {
+        initialNetworkBinding()
+    }
+    
+    // MARK: Properties
+    
     var users: BehaviorRelay<[User]> = BehaviorRelay(value: [])
     let bag = DisposeBag()
     
-    init() {
-        //getUserData()
+    // MARK: Helpers
+    
+    func initialNetworkBinding() {
+        let url = "https://jsonplaceholder.typicode.com/users"
+        NetworkService.shared.getDataFromURL(url: url, from: [User].self) {[weak self] (data) in
+            do {
+                try self?.users.accept(data.get())
+            } catch {
+                print(error)
+            }
+        }
     }
-
-//    func initialNetworkBinding() {
-//        let urlString = "https://jsonplaceholder.typicode.com/users"
-//        NetworkService.shared.getDataFromURL(url: urlString, from: User) { (Result<Decodable, Error>) in
-//            <#code#>
-//        }
-//    }
 }
