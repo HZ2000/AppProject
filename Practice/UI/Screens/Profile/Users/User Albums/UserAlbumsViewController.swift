@@ -25,7 +25,7 @@ class UserAlbumsViewController: UIViewController {
         navigationItem.title = viewModel?.title
         tableViewConfigure()
         setupViewModel()
-        setupViewModelBinding()
+        //setupViewModelBinding()
     }
     
     // MARK: Properties
@@ -36,11 +36,15 @@ class UserAlbumsViewController: UIViewController {
     // MARK: Helpers
     
     private func tableViewConfigure() {
-        tableView.rx.setDelegate(self).disposed(by: bag)
+        //tableView.rx.setDelegate(self).disposed(by: bag)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.reloadData()
     }
     
     private func setupViewModel() {
         viewModel = UserAlbumsViewModel()
+        tableView.reloadData()
     }
     
     private func setupViewModelBinding() {
@@ -55,7 +59,18 @@ class UserAlbumsViewController: UIViewController {
 
 // MARK: UITableViewDelegate
 
-extension UserAlbumsViewController: UITableViewDelegate {
+extension UserAlbumsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(viewModel?.userAlbums.value.count)
+        return viewModel?.userAlbums.value.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let albumViewModel = viewModel?.userAlbums ,let cell = tableView.dequeueReusableCell(withIdentifier: UserAlbumsTableViewCell.storyboardId, for: indexPath) as? UserAlbumsTableViewCell else {return UITableViewCell()}
+        cell.userAlbumConfigure(with: albumViewModel.value[indexPath.row])
+        return cell
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300.0
     }

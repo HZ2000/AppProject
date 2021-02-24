@@ -28,6 +28,7 @@ class UserAlbumsCollectionViewCell: UICollectionViewCell {
     public func configureAlbumPictures(with model: UserAlbumPhoto) {
         guard let photoUrl = URL(string: model.url),
             let placeholderUrl = URL(string: model.thumbnailUrl) else {return}
+        
         do {
             let data = try Data(contentsOf: placeholderUrl)
             userPhotosImageView.sd_setImage(with: photoUrl , placeholderImage: UIImage(data: data))

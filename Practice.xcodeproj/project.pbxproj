@@ -43,7 +43,6 @@
 		E5191B6E25E4038E00F315DB /* LoginPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5191B6C25E4038E00F315DB /* LoginPasswordTextField.swift */; };
 		E5191B7B25E4271100F315DB /* LoginPasswordFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5191B7925E4271100F315DB /* LoginPasswordFieldViewModel.swift */; };
 		E5191B7C25E4271100F315DB /* LoginPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5191B7A25E4271100F315DB /* LoginPasswordTextField.swift */; };
-		E5191B7F25E4282B00F315DB /* UserAlbumPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5191B7E25E4282B00F315DB /* UserAlbumPhotosViewModel.swift */; };
 		E51C3C6225DB935800085684 /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51C3C6125DB935800085684 /* SlideInTransition.swift */; };
 		E51E4E9925E26B2700F3C5D1 /* UsersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51E4E9825E26B2700F3C5D1 /* UsersListViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -89,7 +88,6 @@
 		E5191B6C25E4038E00F315DB /* LoginPasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPasswordTextField.swift; sourceTree = "<group>"; };
 		E5191B7925E4271100F315DB /* LoginPasswordFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPasswordFieldViewModel.swift; sourceTree = "<group>"; };
 		E5191B7A25E4271100F315DB /* LoginPasswordTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPasswordTextField.swift; sourceTree = "<group>"; };
-		E5191B7E25E4282B00F315DB /* UserAlbumPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumPhotosViewModel.swift; sourceTree = "<group>"; };
 		E51C3C6125DB935800085684 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
 		E51E4E9825E26B2700F3C5D1 /* UsersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -261,7 +259,6 @@
 				55EF029025DE9F430052A591 /* UserAlbumsTableViewCell.swift */,
 				55EF029625DFCE3D0052A591 /* UserAlbumsCollectionViewCell.swift */,
 				55EF02A525E3D76B0052A591 /* UserAlbumsViewModel.swift */,
-				E5191B7E25E4282B00F315DB /* UserAlbumPhotosViewModel.swift */,
 			);
 			path = "User Albums";
 			sourceTree = "<group>";
@@ -464,7 +461,6 @@
 				E50544EF25E250C10060315D /* UserAlbum.swift in Sources */,
 				55757B4625D2725C00325F71 /* HomeViewController.swift in Sources */,
 				55757B4E25D2A48C00325F71 /* UIControl + Ext.swift in Sources */,
-				E5191B7F25E4282B00F315DB /* UserAlbumPhotosViewModel.swift in Sources */,
 				55757B5025D2C7E400325F71 /* SlidingMenuViewController.swift in Sources */,
 				E51C3C6225DB935800085684 /* SlideInTransition.swift in Sources */,
 				E5191B7B25E4271100F315DB /* LoginPasswordFieldViewModel.swift in Sources */,

@@ -23,8 +23,8 @@ class UsersListViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = viewModel?.title
-        tableViewConfigure()
         setupViewModel()
+        tableViewConfigure()
         setupViewModelBinding()
     }
     
@@ -63,8 +63,7 @@ class UsersListViewController: UIViewController {
 
 // MARK: UITableViewDelegate
 
-extension UsersListViewController: UITableViewDelegate  {
-    
+extension UsersListViewController: UITableViewDelegate   {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
     }
