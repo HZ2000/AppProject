@@ -28,6 +28,12 @@ class UserAlbumsViewController: UIViewController {
         //setupViewModelBinding()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     // MARK: Properties
     
     private var viewModel: UserAlbumsViewModel?
@@ -37,14 +43,12 @@ class UserAlbumsViewController: UIViewController {
     
     private func tableViewConfigure() {
         //tableView.rx.setDelegate(self).disposed(by: bag)
-        tableView.dataSource = self
         tableView.delegate = self
-        tableView.reloadData()
+        tableView.dataSource = self
     }
     
     private func setupViewModel() {
         viewModel = UserAlbumsViewModel()
-        tableView.reloadData()
     }
     
     private func setupViewModelBinding() {
@@ -59,15 +63,17 @@ class UserAlbumsViewController: UIViewController {
 
 // MARK: UITableViewDelegate
 
-extension UserAlbumsViewController: UITableViewDelegate, UITableViewDataSource {
+extension UserAlbumsViewController: UITableViewDelegate , UITableViewDataSource  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(viewModel?.userAlbums.value.count)
-        return viewModel?.userAlbums.value.count ?? 0
+        guard let userAlbum = viewModel?.userAlbums.value else {return 0}
+        let currentUser = userAlbum.filter { $0.userId == UsersListViewController.currentUser}.map {$0}
+        return currentUser.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let albumViewModel = viewModel?.userAlbums ,let cell = tableView.dequeueReusableCell(withIdentifier: UserAlbumsTableViewCell.storyboardId, for: indexPath) as? UserAlbumsTableViewCell else {return UITableViewCell()}
-        cell.userAlbumConfigure(with: albumViewModel.value[indexPath.row])
+        guard let userAlbum = viewModel?.userAlbums.value , let cell = tableView.dequeueReusableCell(withIdentifier: UserAlbumsTableViewCell.storyboardId, for: indexPath) as? UserAlbumsTableViewCell  else { return UITableViewCell() }
+        let currentUser = userAlbum.filter { $0.userId == UsersListViewController.currentUser}.map {$0}
+        cell.userAlbumConfigure(with: currentUser[indexPath.row])
         return cell
     }
     

@@ -54,7 +54,7 @@ class UsersListViewController: UIViewController {
     private func setupViewModelBinding() {
         guard let modelUsers = viewModel?.users else {return}
         modelUsers
-            .observe(on: MainScheduler.instance)
+            .observeOn(MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: "UsersTableViewCell", cellType: UsersTableViewCell.self)) { (row,item,cell) in
             cell.userCellConfigure(with: item)
         }.disposed(by: bag)

@@ -18,22 +18,22 @@ class UserAlbumsCollectionViewCell: UICollectionViewCell {
     
     // MARK: View Life Cycle
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func prepareForReuse() {
+        super.prepareForReuse()
         
+        self.userPhotosImageView.image = nil
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.layoutIfNeeded()
     }
     
     // MARK: Helpers
     
     public func configureAlbumPictures(with model: UserAlbumPhoto) {
-        guard let photoUrl = URL(string: model.url),
-            let placeholderUrl = URL(string: model.thumbnailUrl) else {return}
-        
-        do {
-            let data = try Data(contentsOf: placeholderUrl)
-            userPhotosImageView.sd_setImage(with: photoUrl , placeholderImage: UIImage(data: data))
-        }catch {
-            print("Couldn't load the url image")
-        }
+        guard let photoUrl = URL(string: model.url) else {return}
+        userPhotosImageView.sd_setImage(with: photoUrl , placeholderImage: UIImage(named: "placeholder"))        
     }
 }

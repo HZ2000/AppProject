@@ -7,8 +7,8 @@ target 'Practice' do
 
   # Pods for Practice
 
-pod 'RxSwift'
-pod 'RxCocoa'
+pod 'RxSwift' , '6.1.0'
+pod 'RxCocoa' , '6.1.0'
 pod 'SwiftyJSON'
 pod 'SDWebImage'
 pod 'Alamofire' 
