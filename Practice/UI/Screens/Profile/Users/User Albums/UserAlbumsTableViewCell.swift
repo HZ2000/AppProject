@@ -25,7 +25,6 @@ class UserAlbumsTableViewCell: UITableViewCell {
         
         collectionViewConfigure()
         setupViewModel()
-        initialNetworkBinding()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -47,25 +46,15 @@ class UserAlbumsTableViewCell: UITableViewCell {
         collectionView.dataSource = self
     }
     
-    public func userAlbumConfigure(with model: UserAlbum) {
+    public func userAlbumConfigure(with model: UserAlbum , filteredPhotos: [UserAlbumPhoto]) {
         albumNameLabel.text = model.title
+        userAlbumPhotos = filteredPhotos
         collectionView.reloadData()
     }
     
     private func setupViewModel() {
         albumViewModel = UserAlbumsViewModel()
-    }
-    
-    func initialNetworkBinding() {
-        let url = "https://jsonplaceholder.typicode.com/photos"
-        NetworkService.shared.getDataFromURL(url: url, from: [UserAlbumPhoto].self) {[weak self] (data) in
-            do {
-                try self?.userAlbumPhotos = data.get()
-                self?.collectionView.reloadData()
-            } catch {
-                print(error)
-            }
-        }
+        collectionView.reloadData()
     }
 }
 
@@ -73,21 +62,14 @@ class UserAlbumsTableViewCell: UITableViewCell {
 
 extension UserAlbumsTableViewCell: UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let album = albumViewModel?.userAlbums.value.map { $0.id }
-        guard let albumId = album else { return 0 }
-        let photoId = userAlbumPhotos.filter { $0.albumId == albumId[section] }.map { $0 }
-        print(photoId.count)
-        return photoId.count
+        print("The photos count is: \(userAlbumPhotos.count)")
+        return userAlbumPhotos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserAlbumsCollectionViewCell.storyboardId, for: indexPath) as? UserAlbumsCollectionViewCell else {return UICollectionViewCell()}
-        let album = albumViewModel?.userAlbums.value.map { $0.id }
-        guard let albumId = album else {return UICollectionViewCell() }
-        let photoId = userAlbumPhotos.filter { $0.albumId == albumId[indexPath.section] }.map { $0 }
-        cell.configureAlbumPictures(with: photoId[indexPath.item])
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserAlbumsCollectionViewCell.storyboardId, for: indexPath) as? UserAlbumsCollectionViewCell
+            else { return UICollectionViewCell() }
+        cell.configureAlbumPictures(with: userAlbumPhotos[indexPath.row])
         return cell
     }
     

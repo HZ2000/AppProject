@@ -59,6 +59,8 @@ class UsersListViewController: UIViewController {
             cell.userCellConfigure(with: item)
         }.disposed(by: bag)
     }
+    
+    
 }
 
 // MARK: UITableViewDelegate

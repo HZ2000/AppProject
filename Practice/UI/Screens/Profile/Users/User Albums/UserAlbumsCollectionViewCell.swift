@@ -33,7 +33,11 @@ class UserAlbumsCollectionViewCell: UICollectionViewCell {
     // MARK: Helpers
     
     public func configureAlbumPictures(with model: UserAlbumPhoto) {
-        guard let photoUrl = URL(string: model.url) else {return}
+        guard let photoUrl = URL(string: model.url) else {
+            userPhotosImageView.sd_cancelCurrentImageLoad()
+            return
+        }
+        userPhotosImageView.sd_cancelCurrentImageLoad()
         userPhotosImageView.sd_setImage(with: photoUrl , placeholderImage: UIImage(named: "placeholder"))        
     }
 }
